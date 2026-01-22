@@ -1,0 +1,16 @@
+# Netlify Configuration - Simplified and Optimized
+[build]
+  # Use a more reliable build command with legacy peer deps
+  command = "npm install --legacy-peer-deps && npm run build"
+  # Publish directory
+  publish = "dist"
+  
+  # Environment variables to ensure proper Node version and dependency installation
+  environment = { NODE_VERSION = "18", NPM_CONFIG_PRODUCTION = "false" }
+
+# Single Page Application redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true

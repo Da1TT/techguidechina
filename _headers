@@ -1,0 +1,32 @@
+# Cloudflare Pages Headers Configuration
+# 这个文件配置HTTP响应头，用于安全性、缓存控制和跨域资源共享
+
+# 全局头信息应用于所有页面和资源
+/*
+  # 跨域资源共享设置
+  Access-Control-Allow-Origin: *
+  
+  # 安全策略头
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  
+  # 内容安全策略(可选)
+  # Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' https://space.coze.cn; font-src 'self' https://cdnjs.cloudflare.com
+
+# 静态资源的缓存控制 - 设置长期缓存
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
