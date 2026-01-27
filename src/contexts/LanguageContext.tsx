@@ -25,7 +25,7 @@ interface LanguageProviderProps {
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguage] = useState<Language>("en");
 
-  // Translation function with null safety
+  // Translation function with enhanced error handling and debugging
   const t = (key: string): string => {
     try {
       // Split the key into parts (e.g., "hero.title" becomes ["hero", "title"])
@@ -37,12 +37,18 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
         if (value && typeof value === "object" && k in value) {
           value = value[k];
         } else {
+          console.warn(`Translation not found for key: "${key}" in language: "${language}"`);
           return key; // Return the key itself if translation not found
         }
       }
       
       // If the final value is a string, return it; otherwise return the key
-      return typeof value === "string" ? value : key;
+      if (typeof value === "string") {
+        return value;
+      } else {
+        console.warn(`Translation for key: "${key}" in language: "${language}" is not a string`);
+        return key;
+      }
     } catch (error) {
       console.error("Translation error:", error);
       return key; // Fallback to key on error

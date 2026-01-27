@@ -1,8 +1,11 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { toast } from "sonner";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const formRef = useRef<HTMLFormElement>(null);
   
   // Animation variants
   const fadeIn = {
@@ -24,6 +27,55 @@ export default function Contact() {
     }
   };
 
+  // Handle form submission using Formspree
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formRef.current) {
+      // 使用Formspree发送表单数据
+      const form = formRef.current;
+      
+      try {
+        // 使用Formspree推荐的标准方法
+        const response = await fetch('https://formspree.io/f/xojdrkdr', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+          },
+          body: new FormData(form),
+        });
+        
+        // 记录完整的响应信息用于调试
+        console.log('Formspree response status:', response.status);
+        
+        if (response.ok) {
+          const data = await response.json();
+          toast.success('Your message has been sent! We will contact you shortly.');
+          form.reset();
+        } else {
+          // 获取详细的错误信息
+          const errorText = await response.text();
+          console.error('Form submission error:', response.status, response.statusText, errorText);
+          
+          try {
+            // 尝试解析JSON格式的错误信息
+            const errorData = JSON.parse(errorText);
+            if (errorData.error) {
+              toast.error(`Oops! ${errorData.error}`);
+            } else {
+              toast.error('Oops! There was a problem submitting your form. Please try again.');
+            }
+          } catch (jsonError) {
+            // 如果错误信息不是JSON格式，显示原始错误文本
+            toast.error(`Oops! ${errorText || 'There was a problem submitting your form. Please try again.'}`);
+          }
+        }
+      } catch (error) {
+        console.error('Network error:', error);
+        toast.error('Network error! Please check your connection and try again later.');
+      }
+    }
+  };
+  
   return (
     <div className="pt-24 pb-16 px-4">
       {/* Page Header */}
@@ -40,7 +92,7 @@ export default function Contact() {
           Have questions or need assistance with planning your trip or exhibition visit? Our team is here to help.
         </p>
       </motion.div>
-
+  
       {/* Contact Form and Information */}
       <motion.div 
         initial="hidden"
@@ -59,7 +111,7 @@ export default function Contact() {
             className="bg-white rounded-xl shadow-lg p-8"
           >
             <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-            <form className="space-y-4">
+            <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
                   Your Name
@@ -67,8 +119,10 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                   placeholder="Enter your name"
+                  required
                 />
               </div>
               <div>
@@ -78,8 +132,10 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                   placeholder="Enter your email"
+                  required
                 />
               </div>
               <div>
@@ -88,12 +144,15 @@ export default function Contact() {
                 </label>
                 <select
                   id="subject"
+                  name="subject"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
                 >
                   <option value="">Select a subject</option>
                   <option value="tour">Tour Information</option>
                   <option value="exhibition">Exhibition Support</option>
                   <option value="custom">Custom Itinerary</option>
+                  <option value="booking">Booking Inquiry</option>
                   <option value="other">Other Inquiry</option>
                 </select>
               </div>
@@ -103,9 +162,11 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                   placeholder="Enter your message"
+                  required
                 ></textarea>
               </div>
               <button
@@ -116,7 +177,7 @@ export default function Contact() {
               </button>
             </form>
           </motion.div>
-
+  
           {/* Contact Information */}
           <motion.div 
             initial="hidden"
@@ -129,20 +190,12 @@ export default function Contact() {
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <i className="fa-solid fa-map-marker-alt text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-lg mb-1">Our Office</h3>
-                    <p className="text-gray-600">{t("footer.address")}</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                     <i className="fa-solid fa-phone text-xl"></i>
                   </div>
                   <div>
-                    <h3 className="font-medium text-lg mb-1">Phone Number</h3>
-                    <p className="text-gray-600">{t("footer.phone")}</p>
+                    <h3 className="font-medium text-lg mb-1">Phone Numbers</h3>
+                    <p className="text-gray-600">+86 13601396033</p>
+                    <p className="text-gray-600">+86 18811405699</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -151,7 +204,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg mb-1">Email Address</h3>
-                    <p className="text-gray-600">{t("footer.email")}</p>
+                    <p className="text-gray-600">yoyo4515@163.com</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -167,19 +220,19 @@ export default function Contact() {
                 </li>
               </ul>
             </div>
-
+  
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-lg h-72">
               <img 
                 src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Map%20showing%20Beijing%20location%20in%20China&sign=f84347b106f0f46beeeb1c01c3e768fb" 
-                alt="Office Location Map" 
+                alt="Beijing Map" 
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
         </div>
       </motion.div>
-
+  
       {/* FAQ Section */}
       <motion.div 
         initial="hidden"
@@ -210,13 +263,6 @@ export default function Contact() {
           </motion.div>
           
           <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
-            <h3 className="text-xl font-bold mb-2">What languages do your guides speak?</h3>
-            <p className="text-gray-600">
-              Our professional guides are fluent in English, Mandarin, and many other languages including French, Spanish, German, Japanese, and Korean. Please specify your language preference when booking.
-            </p>
-          </motion.div>
-          
-          <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
             <h3 className="text-xl font-bold mb-2">What is included in your exhibition support services?</h3>
             <p className="text-gray-600">
               Our exhibition support includes visa assistance, booth setup coordination, translation services, logistics support, transportation, accommodation arrangements, and on-site assistance throughout the exhibition period.
@@ -229,82 +275,14 @@ export default function Contact() {
               Yes, we provide visa application assistance for international visitors coming to China for tours, exhibitions, or business purposes. We can guide you through the application process and provide necessary documentation.
             </p>
           </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* GitHub File Operations Guide */}
-      <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-        className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-12"
-      >
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-4">GitHub File Operations Guide</h2>
-          <p className="text-gray-600">
-            Learn how to manage files in your GitHub repository
-          </p>
-        </div>
-        
-        <div className="space-y-8">
-          {/* Moving Files */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Moving Files</h3>
-            <div className="bg-white rounded-lg shadow p-6">
-              <h4 className="font-bold mb-2">Method 1: Using GitHub Web Interface</h4>
-              <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                <li>Navigate to your repository on GitHub</li>
-                <li>Click on the file you want to move</li>
-                <li>Click the pencil icon to edit the file</li>
-                <li>In the file name field, update the path (e.g., change "old-folder/file.md" to "new-folder/file.md")</li>
-                <li>Scroll down and commit your changes</li>
-              </ol>
-              
-              <h4 className="font-bold mt-4 mb-2">Method 2: Using Git Command Line</h4>
-              <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-                <code>
-                  # Move a file from old location to new location
-                  git mv old-folder/file.md new-folder/file.md
-                  
-                  # Commit the change
-                  git commit -m "Move file to new folder"
-                  
-                  # Push the change to GitHub
-                  git push origin main
-                </code>
-              </pre>
-            </div>
-          </div>
           
-          {/* Deleting Files */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Deleting Files</h3>
-            <div className="bg-white rounded-lg shadow p-6">
-              <h4 className="font-bold mb-2">Method 1: Using GitHub Web Interface</h4>
-              <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                <li>Navigate to your repository on GitHub</li>
-                <li>Click on the file you want to delete</li>
-                <li>Click the trash can icon at the top right</li>
-                <li>Scroll down and commit your changes</li>
-              </ol>
-              
-              <h4 className="font-bold mt-4 mb-2">Method 2: Using Git Command Line</h4>
-              <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-                <code>
-                  # Delete a file
-                  git rm file.md
-                  
-                  # Commit the deletion
-                  git commit -m "Delete file"
-                  
-                  # Push the change to GitHub
-                  git push origin main
-                </code>
-              </pre>
-            </div>
-          </div>
-        </div>
+          <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
+            <h3 className="text-xl font-bold mb-2">How does the booking process work?</h3>
+            <p className="text-gray-600">
+              To book our services, simply fill out the contact form or email us directly at yoyo4515@163.com. Our team will respond within 24 hours to discuss your requirements and provide a detailed proposal. Once confirmed, we'll handle all arrangements and keep you updated throughout the process.
+            </p>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </div>
   );

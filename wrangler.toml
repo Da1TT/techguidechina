@@ -2,7 +2,7 @@
 # 这个文件配置Cloudflare Pages的构建和部署设置
 
 # 项目名称
-name = "tour-business-in-china"
+name = "techguide-in-china"
 
 # 兼容性日期 - Wrangler 4.x 必需
 compatibility_date = "2026-01-21"

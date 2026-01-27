@@ -19,12 +19,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
            {/* Company Info */}
           <div>
-             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
-                TBC
-              </div>
-              <span className="font-bold text-xl">Tour & Business in China</span>
-            </div>
+              <div className="flex items-center mb-4">
+               <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
+                 TGC
+               </div>
+               <span className="font-bold text-xl">TechGuide in China</span>
+             </div>
             <p className="text-gray-400 mb-4">
               Professional ground services for international visitors to Beijing, China.
               Making your stay comfortable, convenient, and memorable.
@@ -45,21 +45,21 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Contact Info */}
+           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold mb-4">{t("footer.contactInfo")}</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <i className="fa-solid fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
-                <span className="text-gray-400">{t("footer.address")}</span>
+                <i className="fa-solid fa-phone text-red-500 mt-1 mr-3"></i>
+                <span className="text-gray-400">+86 13601396033</span>
               </li>
               <li className="flex items-start">
                 <i className="fa-solid fa-phone text-red-500 mt-1 mr-3"></i>
-                <span className="text-gray-400">{t("footer.phone")}</span>
+                <span className="text-gray-400">+86 18811405699</span>
               </li>
               <li className="flex items-start">
                 <i className="fa-solid fa-envelope text-red-500 mt-1 mr-3"></i>
-                <span className="text-gray-400">{t("footer.email")}</span>
+                <span className="text-gray-400">yoyo4515@163.com</span>
               </li>
             </ul>
           </div>

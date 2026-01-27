@@ -30,61 +30,45 @@ export default function About() {
     }
   };
 
-  // Company history timeline
-  const timeline: TimelineItem[] = [
-    { year: "2010", event: "Company founded with focus on providing tour guide services" },
-    { year: "2013", event: "Expanded to include exhibition support services" },
-    { year: "2016", event: "Achieved 10,000+ satisfied clients from 20+ countries" },
-    { year: "2019", event: "Opened branch offices in Shanghai and Guangzhou" },
-    { year: "2023", event: "Launched customized business travel solutions" },
-    { year: "2026", event: "Continuing to innovate and expand our services" }
-  ];
-
   // Core values
   const coreValues = [
     {
+      title: "Expertise",
+      description: "Deep knowledge of China's tech industry and exhibitions",
+      icon: "fa-lightbulb"
+    },
+    {
       title: "Professionalism",
-      description: "We maintain the highest standards of expertise and service quality",
+      description: "Highest standards of service quality and reliability",
       icon: "fa-award"
     },
     {
       title: "Integrity",
-      description: "We operate with honesty, transparency, and ethical business practices",
+      description: "Honest, transparent, and ethical business practices",
       icon: "fa-shield-alt"
     },
     {
-      title: "Customer Focus",
-      description: "We prioritize our clients' needs and strive to exceed their expectations",
-      icon: "fa-heart"
-    },
-    {
-      title: "Cultural Understanding",
-      description: "We bridge cultural gaps to ensure smooth cross-cultural experiences",
-      icon: "fa-globe"
+      title: "Innovation",
+      description: "Staying ahead of tech trends to provide cutting-edge insights",
+      icon: "fa-rocket"
     }
   ];
 
-  // Team members (simplified)
-  const teamMembers = [
-    {
-      name: "Michael Johnson",
-      position: "Founder & CEO",
-      image: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Professional%20businessman%2C%20CEO&sign=1b66ce95ceaaa268a84a9ebd0e4e5691"
+  // Founders with detailed background
+  const founders = [
+     {
+      name: "Bowen Zhang",
+      position: "Founder",
+      image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/张博文_20260125162507.jpg",
+      bio: "With many years of experience in the IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His deep understanding of the Chinese tech ecosystem and international business practices makes him an invaluable resource for clients seeking to navigate China's tech landscape.",
+      expertise: ["IT Industry", "Business Development", "Exhibition Strategy", "Cross-cultural Communication"]
     },
-    {
-      name: "Sophie Chen",
-      position: "Operations Director",
-      image: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Professional%20businesswoman%2C%20operations%20director&sign=7dc71e5a8107f0e48b3f364204d44fcb"
-    },
-    {
-      name: "Robert Zhang",
-      position: "Tour Director",
-      image: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Professional%20tour%20director&sign=094c05cda94a2e35f13c8c5bb5faec21"
-    },
-    {
-      name: "Linda Wang",
-      position: "Exhibition Services Manager",
-      image: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Professional%20exhibition%20manager&sign=82c5fe30d8181fbaa0ebeb29e4c10339"
+     {
+      name: "Yoyo Guan",
+      position: "Founder",
+      image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/关玥_20260125162507.JPG",
+      bio: "With 8 years of experience at Lenovo, Yoyo Guan brings deep expertise in chip and battery technology. Her technical background and understanding of China's tech ecosystem provide valuable insights for clients attending technology exhibitions. She is passionate about bridging the gap between Chinese tech innovation and international audiences.",
+      expertise: ["Semiconductor Technology", "Battery Innovation", "Technical Translation", "AI Applications"]
     }
   ];
 
@@ -99,9 +83,9 @@ export default function About() {
         className="max-w-7xl mx-auto text-center mb-16"
       >
         <span className="text-red-600 font-medium">{t("nav.about")}</span>
-         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">About Tour & Business in China</h1>
+         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">About TechGuide in China</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          We are a professional ground services provider dedicated to helping international visitors make the most of their time in China, with a focus on Beijing and major destinations nationwide.
+          We are a professional services provider specializing in IT and AI exhibition support and customized Beijing tours for international visitors, founded by tech industry experts with deep knowledge of China's technology ecosystem.
         </p>
       </motion.div>
 
@@ -117,13 +101,13 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
              <p className="text-gray-600 mb-4">
-              Founded in 2010, Tour & Business in China started with a simple mission: to provide exceptional tour guide services to international visitors coming to China. Over the years, we have grown and expanded our services to include comprehensive exhibition support, customized travel solutions, and business assistance across major Chinese cities.
+              Founded by Zhang Bowen and Guan Yue, TechGuide in China was created to bridge the gap between China's thriving tech ecosystem and international visitors. Recognizing the growing interest in China's IT and AI innovations, our founders set out to provide specialized support services for international businesses and professionals attending tech exhibitions in China.
             </p>
             <p className="text-gray-600 mb-4">
-              With a team of experienced professionals who are fluent in multiple languages and deeply knowledgeable about Chinese culture and business practices, we have successfully served thousands of clients from around the world.
+              With a combined background in IT, semiconductor technology, and international business, our team brings unique insights and expertise to every client engagement. We understand the specific needs of tech professionals visiting China and have tailored our services to provide comprehensive support for both exhibition participation and cultural exploration.
             </p>
             <p className="text-gray-600">
-              Our commitment to excellence and customer satisfaction has made us a trusted partner for individuals, businesses, and organizations seeking to navigate China's rich cultural landscape and dynamic business environment in Beijing and beyond.
+              Today, TechGuide in China has successfully served thousands of clients from around the world, helping them navigate China's complex tech landscape with confidence and ease. Our commitment to excellence and deep industry knowledge has made us a trusted partner for businesses looking to engage with China's tech ecosystem.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -132,8 +116,8 @@ export default function About() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Tour%20guide%20with%20group%20of%20tourists%2C%20Beijing&sign=3f1a05cbaf1cacf7ad6c57570a295803" 
-                alt="Tour Guide" 
+                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=IT%20exhibition%20in%20China%2C%20international%20business%20people%20networking&sign=bf5bf10b8e17102d22d0ffd9e343359e" 
+                alt="Tech Exhibition Support" 
                 className="rounded-xl shadow-lg w-full h-80 object-cover"
               />
             </motion.div>
@@ -142,8 +126,8 @@ export default function About() {
               transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
             >
               <img 
-                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Business%20meeting%2C%20international%20negotiation%2C%20China&sign=e318f5c27c1f99d6d051ecdf4db55b9f" 
-                alt="Business Meeting" 
+                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Professional%20tour%20guide%20with%20foreign%20visitors%2C%20Beijing&sign=81b34affbba2ae51be03d6db1a20e4af" 
+                alt="Beijing Tour Services" 
                 className="rounded-xl shadow-lg w-full h-80 object-cover mt-8"
               />
             </motion.div>
@@ -151,50 +135,59 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Company Timeline */}
+      {/* Founders Section */}
       <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeIn}
-        className="max-w-7xl mx-auto mb-20"
+        className="max-w-7xl mx-auto mb-20 bg-gradient-to-b from-red-50 to-white"
       >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Our Journey</h2>
+        <div className="text-center mb-16 p-8">
+          <h2 className="text-3xl font-bold mb-2">Meet Our Expert Founders</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            A timeline of our company's growth and achievements
+            With deep expertise in China's tech industry and years of professional experience, our founders are dedicated to providing exceptional service.
           </p>
         </div>
         
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-red-200 transform -translate-x-1/2"></div>
-          
-          <div className="space-y-12">
-            {timeline.map((item, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`md:flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12'}`}>
-                  <h3 className="text-2xl font-bold text-red-600 mb-2">{item.year}</h3>
-                  <p className="text-gray-600">{item.event}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 px-8">
+          {founders.map((founder, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+            >
+              <div className="p-8">
+                <div className="flex flex-col items-center mb-8">
+                  <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-6 border-4 border-red-100">
+                    <img 
+                      src={founder.image} 
+                      alt={founder.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1">{founder.name}</h3>
+                  <p className="text-red-600 font-medium">{founder.position}</p>
                 </div>
-                
-                <div className="hidden md:flex items-center justify-center z-10">
-                  <div className="w-10 h-10 rounded-full bg-red-600"></div>
+                <p className="text-gray-600 mb-6 text-center">
+                  {founder.bio}
+                </p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {founder.expertise.map((skill, i) => (
+                    <span 
+                      key={i} 
+                      className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-                
-                <div className="md:w-1/2 mt-4 md:mt-0"></div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
@@ -236,50 +229,6 @@ export default function About() {
         </motion.div>
       </motion.div>
 
-      {/* Our Team */}
-      <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-        className="max-w-7xl mx-auto mb-20"
-      >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Our Leadership Team</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Meet the dedicated professionals who lead our company
-          </p>
-        </div>
-        
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
-          {teamMembers.map((member, index) => (
-            <motion.div 
-              key={index}
-              variants={fadeIn}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
-            >
-              <div className="relative h-80">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-gray-600">{member.position}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-
       {/* Why Choose Us */}
       <motion.div 
         initial="hidden"
@@ -290,32 +239,32 @@ export default function About() {
       >
         <div className="bg-red-600 rounded-2xl p-8 md:p-12 text-white">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2">Why Choose Tour & Business in China?</h2>
+            <h2 className="text-3xl font-bold mb-2">Why Choose TechGuide in China?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-white text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fa-solid fa-users text-2xl"></i>
+                <i className="fa-solid fa-laptop-code text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Expert Team</h3>
-              <p>Our professional guides and consultants have extensive knowledge and experience in their fields.</p>
+              <h3 className="text-xl font-bold mb-3">Tech Industry Expertise</h3>
+              <p>Our team has deep knowledge of China's IT and AI sectors, providing valuable insights beyond basic translation.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-white text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fa-solid fa-language text-2xl"></i>
+                <i className="fa-solid fa-handshake text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Multilingual Support</h3>
-              <p>We offer services in multiple languages to ensure clear communication and understanding.</p>
+              <h3 className="text-xl font-bold mb-3">Trusted Partnership</h3>
+              <p>We build long-term relationships with our clients based on trust, reliability, and exceptional service quality.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-white text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fa-solid fa-star text-2xl"></i>
+                <i className="fa-solid fa-map-marked-alt text-2xl"></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">Exceptional Service</h3>
-              <p>We go above and beyond to ensure our clients have a memorable and successful experience.</p>
+              <h3 className="text-xl font-bold mb-3">Local Insights</h3>
+              <p>Our deep understanding of Chinese business culture and local customs ensures smooth and successful engagements.</p>
             </div>
           </div>
         </div>

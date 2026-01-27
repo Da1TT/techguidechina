@@ -33,8 +33,8 @@ export default function Header() {
   // Navigation links
   const navLinks = [
     { path: "/", label: t("nav.home") },
-    { path: "/tours", label: t("nav.tours") },
     { path: "/exhibitions", label: t("nav.exhibitions") },
+    { path: "/tours", label: t("nav.tours") },
     { path: "/about", label: t("nav.about") },
     { path: "/contact", label: t("nav.contact") },
   ];
@@ -53,10 +53,10 @@ export default function Header() {
            {/* Logo */}
            <Link to="/" className="flex items-center">
             <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
-              TBC
+              TGC
             </div>
             <span className={cn("font-bold text-xl", isScrolled ? "text-gray-900" : "text-white")}>
-              Tour & Business in China
+              TechGuide in China
             </span>
           </Link>
 
