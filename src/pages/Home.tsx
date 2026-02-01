@@ -73,7 +73,7 @@ export default function Home() {
                 "Sustainable city technologies",
                 "Case studies from leading Chinese cities"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Smart%20City%20Technology%20Exhibition%2C%20Beijing&sign=6856f58a6c5e477f9ad6dd8029d26b01",
+              image: "/images/image-1.jpg",
               registrationLink: "#",
               category: "ai",
               startDate: new Date(2026, 0, 12)
@@ -92,7 +92,7 @@ export default function Home() {
                 "Blockchain applications",
                 "Cross-border digital trade opportunities"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Digital%20Economy%20Exhibition%2C%20Guangzhou&sign=b493ac3474664c38ecb5e03975ff43da",
+              image: "/images/image-2.jpg",
               registrationLink: "#",
               category: "digital",
               startDate: new Date(2026, 1, 20)
@@ -111,7 +111,7 @@ export default function Home() {
                 "Automation solutions for manufacturing",
                 "Human-robot collaboration technologies"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=AI%20and%20Robotics%20Exhibition%2C%20Shanghai&sign=a71fcf6672da119c8eb27d1811b7918f",
+              image: "/images/image-3.jpg",
               registrationLink: "#",
               category: "ai",
               startDate: new Date(2026, 2, 15)
@@ -130,7 +130,7 @@ export default function Home() {
                 "AI in cybersecurity",
                 "Cloud security innovations"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Cybersecurity%20Exhibition%2C%20China&sign=702ace6937a6f24bf35c90a1202d0f2e",
+              image: "/images/image-4.jpg",
               registrationLink: "#",
               category: "it",
               startDate: new Date(2026, 3, 8)
@@ -149,7 +149,7 @@ export default function Home() {
                 "Data security and privacy solutions",
                 "International cooperation opportunities"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Big%20Data%20and%20Cloud%20Computing%20Exhibition%2C%20China&sign=8d1ba33572ab44314f87eca5e2b8b49c",
+              image: "/images/image-5.jpg",
               registrationLink: "#",
               category: "ai",
               startDate: new Date(2026, 4, 26)
@@ -168,7 +168,7 @@ export default function Home() {
                 "Cybersecurity technologies",
                 "Digital transformation case studies"
               ],
-              image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Software%20and%20information%20service%20exhibition%2C%20China&sign=c30039d78b5815b5ec9ac16c96a08416",
+              image: "/images/image-6.jpg",
               registrationLink: "#",
               category: "it",
               startDate: new Date(2026, 5, 15)
@@ -211,7 +211,7 @@ export default function Home() {
             <section className="relative h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-black/30 z-10"></div>
                 <img
-                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Beijing%20tech%20exhibition%20with%20AI%20robots%20modern%20technology%20and%20Beijing%20skyline%20background%20Forbidden%20City%20elements&sign=3f86a5d72ed00ee1442e87241cf5700e"
+                    src="/images/image-7.jpg"
                     alt="Beijing Tech Exhibition"
                     className="absolute inset-0 w-full h-full object-cover" />
                 <div
@@ -560,7 +560,7 @@ export default function Home() {
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Beijing%20Forbidden%20City%20and%20Tiananmen%20Square%2C%20historical%20cultural%20tour&sign=bbe233da432647ad12b50b290fac7703"
+                                    src="/images/image-8.jpg"
                                     alt="Historical and Cultural Tour"
                                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
                                 <div
@@ -586,7 +586,7 @@ export default function Home() {
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Beijing%20CBD%20skyline%2C%20modern%20architecture%2C%20China&sign=1d304d8218d67b5a2eff3eb90b5a92dc"
+                                    src="/images/image-9.jpg"
                                     alt="Modern City Tour"
                                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>
@@ -609,7 +609,7 @@ export default function Home() {
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Summer%20Palace%20Beijing%2C%20royal%20garden%2C%20traditional%20Chinese%20architecture&sign=2317565ecaebef9aaca36e84ba711e74"
+                                    src="/images/image-10.jpg"
                                     alt="Royal Gardens Tour"
                                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>
@@ -660,7 +660,7 @@ export default function Home() {
                             <div
                                 className="w-64 h-64 rounded-full overflow-hidden shadow-lg mb-6 border-4 border-white">
                                 <img
-                                    src="https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/张博文_20260125162507.jpg"
+                                    src="/images/image-12.JPG"
                                     alt="Zhang Bowen"
                                      className="w-full h-full object-cover" />
                             </div><h3 className="text-2xl font-bold mb-2">Bowen Zhang</h3>
@@ -679,7 +679,7 @@ export default function Home() {
                             <div
                                 className="w-64 h-64 rounded-full overflow-hidden shadow-lg mb-6 border-4 border-white">
                                 <img
-                                    src="https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/关玥_20260125162507.JPG"
+                                    src="/images/image-13.jpg"
                                     alt="Guan Yue"
                                      className="w-full h-full object-cover" />
                             </div>
@@ -724,7 +724,7 @@ export default function Home() {
                             <p className="text-gray-600 italic mb-6">"The exhibition support was exceptional - knowledgeable, professional, and tailored to our specific needs. Zhang Bowen's insights into China's tech industry were invaluable for our business expansion plans."</p>
                             <div className="flex items-center">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Caucasian%20male%20businessman%2C%20professional&sign=df30afd45389a9d7aa0008231403838f"
+                                    src="/images/image-11.jpg"
                                     alt="Client"
                                     className="w-12 h-12 rounded-full object-cover mr-4" />
                                 <div>
@@ -744,7 +744,7 @@ export default function Home() {
                             <p className="text-gray-600 italic mb-6">"Guan Yue's technical background made our visit to the AI exhibition truly insightful. Her translation services were excellent, and the customized tour of Beijing's tech hubs exceeded our expectations."</p>
                             <div className="flex items-center">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=European%20female%20businesswoman%2C%20happy&sign=9eac670ea122624cc05b31d2e1b99aac"
+                                    src="/images/image-14.jpg"
                                     alt="Client"
                                     className="w-12 h-12 rounded-full object-cover mr-4" />
                                 <div>
@@ -764,7 +764,7 @@ export default function Home() {
                             <p className="text-gray-600 italic mb-6">"From airport pickup to exhibition navigation and city tours, everything was handled seamlessly. The team's knowledge of both China's tech industry and cultural landmarks made our trip both productive and enjoyable."</p>
                             <div className="flex items-center">
                                 <img
-                                    src="https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=Asian%20male%20businessman%2C%20professional&sign=5f8b153d75b3c985e35176285361cb8d"
+                                    src="/images/image-15.jpg"
                                     alt="Client"
                                     className="w-12 h-12 rounded-full object-cover mr-4" />
                                 <div>
