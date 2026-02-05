@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BookingForm from "../components/BookingForm";
-import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -26,10 +25,10 @@ interface Service {
 }
 
 export default function Exhibitions() {
-  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<'all' | 'ai' | 'it' | 'digital' | 'industry'>('all');
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [selectedExhibition, setSelectedExhibition] = useState<Exhibition | null>(null);
+  const [filteredExhibitions, setFilteredExhibitions] = useState<Exhibition[]>([]);
 
   // Animation variants
   const fadeIn = {
@@ -317,9 +316,13 @@ export default function Exhibitions() {
   ];
 
   // Filter exhibitions by category
-  const filteredExhibitions = activeCategory === 'all' 
-    ? exhibitions 
-    : exhibitions.filter(exhibition => exhibition.category === activeCategory);
+  useEffect(() => {
+    if (activeCategory === 'all') {
+      setFilteredExhibitions(exhibitions);
+    } else {
+      setFilteredExhibitions(exhibitions.filter(exhibition => exhibition.category === activeCategory));
+    }
+  }, [activeCategory]);
 
   // Handle exhibition registration
   const handleRegistration = (exhibition: Exhibition) => {
@@ -358,7 +361,7 @@ export default function Exhibitions() {
         variants={fadeIn}
         className="max-w-7xl mx-auto text-center mb-16"
       >
-        <span className="text-red-600 font-medium">{t("nav.exhibitions")}</span>
+        <span className="text-red-600 font-medium">Exhibitions</span>
         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">IT & AI Exhibition Services</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Professional guidance for international visitors to China's leading IT and AI exhibitions, with expert insights from our team of industry specialists.
@@ -526,8 +529,7 @@ export default function Exhibitions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className={`md:flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12'}`}>
@@ -577,7 +579,7 @@ export default function Exhibitions() {
                  <h3 className="text-xl font-bold mb-1">Bowen Zhang</h3>
                  <p className="text-red-600 font-medium mb-2">Co-founder & CEO</p>
                  <p className="text-gray-600">
-                   With many years of experience in the IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country.
+                   With extensive experience in the IT and internet industry, Bowen Zhang has in-depth knowledge of China's technology companies and exhibitions across the country.
                  </p>
               </div>
             </div>
@@ -594,7 +596,7 @@ export default function Exhibitions() {
                  <h3 className="text-xl font-bold mb-1">Yoyo Guan</h3>
                  <p className="text-red-600 font-medium mb-2">Co-founder & CTO</p>
                  <p className="text-gray-600">
-                   With 8 years of experience at Lenovo, Yoyo Guan brings deep expertise in chip and battery technology, providing valuable technical insights for clients.
+                   With extensive experience in Fortune 500 IT companies, Yoyo Guan brings deep expertise in chip and battery technology, providing valuable technical insights for clients.
                  </p>
               </div>
             </div>

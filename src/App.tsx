@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ConsultationButton from "./components/ConsultationButton";
-import { LanguageProvider } from "./contexts/LanguageContext";
 import { useTheme } from "./hooks/useTheme";
 
 export default function App() {
@@ -44,22 +43,20 @@ export default function App() {
   }, []);
   
   return (
-    <LanguageProvider>
-      <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tours" element={<Tours />} />
-            <Route path="/exhibitions" element={<Exhibitions />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* 添加404路由以处理未找到的路径 */}
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Header />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tours" element={<Tours />} />
+          <Route path="/exhibitions" element={<Exhibitions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* 添加404路由以处理未找到的路径 */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }

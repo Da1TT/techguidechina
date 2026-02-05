@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Footer() {
-  const { t } = useLanguage();
   
   // Handle newsletter form submission with null safety
   const handleSubmit = (e: React.FormEvent) => {
@@ -19,12 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
            {/* Company Info */}
           <div>
-              <div className="flex items-center mb-4">
-               <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
-                 TGC
-               </div>
-               <span className="font-bold text-xl">TechGuide in China</span>
+            <div className="flex items-center mb-4">
+             <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
+               <i className="fa-solid fa-globe"></i>
              </div>
+             <span className="font-bold text-xl">TechGuide in China</span>
+           </div>
             <p className="text-gray-400 mb-4">
               Professional ground services for international visitors to Beijing, China.
               Making your stay comfortable, convenient, and memorable.
@@ -47,7 +45,7 @@ export default function Footer() {
           
            {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">{t("footer.contactInfo")}</h3>
+        <h3 className="text-lg font-bold mb-4">Contact Information</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <i className="fa-solid fa-phone text-red-500 mt-1 mr-3"></i>
@@ -66,31 +64,31 @@ export default function Footer() {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">{t("footer.quickLinks")}</h3>
-            <ul className="space-y-2">
+        <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+         <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.home")}
-                </Link>
+                 <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                 Home
+                 </Link>
               </li>
               <li>
                 <Link to="/tours" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.tours")}
+                China Tours
                 </Link>
               </li>
               <li>
                 <Link to="/exhibitions" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.exhibitions")}
+                Exhibitions
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.about")}
+                About Us
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  {t("nav.contact")}
+                Contact
                 </Link>
               </li>
             </ul>
@@ -98,7 +96,7 @@ export default function Footer() {
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-bold mb-4">{t("footer.followUs")}</h3>
+            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter to receive the latest updates and special offers.
             </p>
@@ -122,7 +120,7 @@ export default function Footer() {
         
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
-          <p>{t("footer.copyright")} - Powered by Netlify</p>
+          <p>© 2026 TechGuide in China. All rights reserved. - Powered by Netlify</p>
         </div>
       </div>
     </footer>

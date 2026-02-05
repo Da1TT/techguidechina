@@ -1,10 +1,8 @@
-import { useLanguage } from "../contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { toast } from "sonner";
 
 export default function Contact() {
-  const { t } = useLanguage();
   const formRef = useRef<HTMLFormElement>(null);
   
   // Animation variants
@@ -86,7 +84,7 @@ export default function Contact() {
         variants={fadeIn}
         className="max-w-7xl mx-auto text-center mb-16"
       >
-        <span className="text-red-600 font-medium">{t("nav.contact")}</span>
+        <span className="text-red-600 font-medium">Contact</span>
         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">Get in Touch With Us</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Have questions or need assistance with planning your trip or exhibition visit? Our team is here to help.
