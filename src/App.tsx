@@ -7,13 +7,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ConsultationButton from "./components/ConsultationButton";
+import ScrollToTop from "./components/ScrollToTop";
 import { useTheme } from "./hooks/useTheme";
 
 export default function App() {
   // 初始化主题
   useTheme();
-  
+
   // 添加第三方客服脚本
   useEffect(() => {
     // 移除现有脚本以避免重复加载
@@ -21,7 +21,7 @@ export default function App() {
     if (existingScript) {
       existingScript.remove();
     }
-    
+
     // 嵌入美洽客服脚本
     const script = document.createElement('script');
     script.id = 'meiqia-script';
@@ -34,16 +34,19 @@ export default function App() {
         window._MEIQIA('entId', '375655'); // 这里使用的是演示ID，您需要替换为自己的美洽企业ID
       }
     };
-    
+
     document.body.appendChild(script);
-    
+
     return () => {
-      document.body.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
-  
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <ScrollToTop />
       <Header />
       <main className="flex-grow">
         <Routes>

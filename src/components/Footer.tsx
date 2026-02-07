@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
 
 export default function Footer() {
-  
+
   // Handle newsletter form submission with null safety
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -10,7 +10,7 @@ export default function Footer() {
       alert('Thank you for subscribing!');
     }
   };
-  
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +42,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
            {/* Contact Info */}
           <div>
         <h3 className="text-lg font-bold mb-4">Contact Information</h3>
@@ -61,39 +61,39 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Quick Links */}
           <div>
         <h3 className="text-lg font-bold mb-4">Quick Links</h3>
          <ul className="space-y-2">
               <li>
-                 <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                 <ScrollLink to="/" className="text-gray-400 hover:text-white transition-colors">
                  Home
-                 </Link>
+                 </ScrollLink>
               </li>
               <li>
-                <Link to="/tours" className="text-gray-400 hover:text-white transition-colors">
+                <ScrollLink to="/tours" className="text-gray-400 hover:text-white transition-colors">
                 China Tours
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link to="/exhibitions" className="text-gray-400 hover:text-white transition-colors">
+                <ScrollLink to="/exhibitions" className="text-gray-400 hover:text-white transition-colors">
                 Exhibitions
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+                <ScrollLink to="/about" className="text-gray-400 hover:text-white transition-colors">
                 About Us
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <ScrollLink to="/contact" className="text-gray-400 hover:text-white transition-colors">
                 Contact
-                </Link>
+                </ScrollLink>
               </li>
             </ul>
           </div>
-          
+
           {/* Newsletter */}
           <div>
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
@@ -117,7 +117,7 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        
+
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
           <p>© 2026 TechGuide in China. All rights reserved. - Powered by Netlify</p>
