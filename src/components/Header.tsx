@@ -87,7 +87,7 @@ export default function Header() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={cn("text-2xl", isScrolled ? "text-gray-900" : "text-white")}
+              className={cn("text-2xl", isScrolled ? "text-gray-900" : "text-gray-900")}
             >
               <i className={`fa-solid ${mobileMenuOpen ? "fa-times" : "fa-bars"}`}></i>
             </button>
