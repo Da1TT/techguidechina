@@ -1,0 +1,9 @@
+name = "techguidechina-worker"
+main = "worker.js"
+compatibility_date = "2024-04-15"
+
+# KV Namespace for visitor counting
+[[kv_namespaces]]
+binding = "VISITORS"
+id = ""  # Replace with your KV namespace ID after creating it
+preview_id = ""  # Optional: preview environment KV namespace ID
