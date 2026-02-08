@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
-import VisitorCounter from "../components/VisitorCounter";
 import { toast } from "sonner";
 
 interface Exhibition {
@@ -246,16 +245,6 @@ export default function Home() {
                         }}
                         className="text-lg md:text-xl mb-8 max-w-2xl">Professional guidance for international visitors to China's leading IT and AI exhibitions, with additional tailored Beijing tour services.
                                                                                                                                                           </motion.p>
-                    
-                    {/* Visitor Counter */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.3 }}
-                        className="mb-8"
-                    >
-                        <VisitorCounter />
-                    </motion.div>
                     <motion.div
                         initial={{
                             opacity: 0
