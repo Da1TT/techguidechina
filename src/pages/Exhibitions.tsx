@@ -62,7 +62,7 @@ export default function Exhibitions() {
         "5G applications in smart buildings",
         "Green building and energy efficiency technologies"
       ],
-      image: "https://images.unsplash.com/photo-1518896535498-35f3e7b9b26b?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
       registrationLink: "https://www.smartbuildingexpo.com.cn"
     },
 
@@ -79,7 +79,7 @@ export default function Exhibitions() {
         "Data security and privacy protection",
         "International big data industry cooperation"
       ],
-      image: "https://images.unsplash.com/photo-1551288042-beb2554a439e?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.bigdata-expo.cn"
     },
 
@@ -95,7 +95,7 @@ export default function Exhibitions() {
         "Digital transformation success cases",
         "Open source technology and collaboration"
       ],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
       registrationLink: "https://www.csis.cn"
     },
 
@@ -112,7 +112,7 @@ export default function Exhibitions() {
         "AI applications across vertical industries",
         "Global AI frontier research releases"
       ],
-      image: "https://images.unsplash.com/photo-1535378927042-6f75a96e017b?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.worldaic.com.cn"
     },
 
@@ -128,7 +128,7 @@ export default function Exhibitions() {
         "Global top-tier e-sports tournaments",
         "Digital content creation and distribution"
       ],
-      image: "https://images.unsplash.com/photo-1493711662062-fa541f7f3d21?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.chinajoy.net"
     },
 
@@ -145,7 +145,7 @@ export default function Exhibitions() {
         "Cloud computing and big data platforms",
         "Future communication technology outlook"
       ],
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.ptexpo.com.cn"
     },
 
@@ -161,7 +161,7 @@ export default function Exhibitions() {
         "Digital economy development strategies",
         "International internet governance cooperation"
       ],
-      image: "https://images.unsplash.com/photo-1486312338219-68d047620028?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.wicinternet.org"
     },
 
@@ -177,7 +177,7 @@ export default function Exhibitions() {
         "Smart hardware and embedded systems",
         "Industrial IoT applications"
       ],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdc31b?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "https://www.iotexpo.com.cn"
     },
 
@@ -193,7 +193,7 @@ export default function Exhibitions() {
         "AI applications in manufacturing",
         "AI industry investment and cooperation"
       ],
-      image: "https://images.unsplash.com/photo-1485827404703-89b8fccd5e19?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
       registrationLink: "#"
     }
   ];
