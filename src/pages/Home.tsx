@@ -66,7 +66,7 @@ export default function Home() {
                 "Case studies from leading Chinese cities"
             ],
 
-            image: "https://images.unsplash.com/photo-1486312338219-68d047620028?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
             registrationLink: "#",
             startDate: new Date(2026, 0, 12)
         }, {
@@ -83,7 +83,7 @@ export default function Home() {
                 "Cross-border digital trade opportunities"
             ],
 
-            image: "https://images.unsplash.com/photo-1551288042-beb2554a439e?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
             registrationLink: "#",
             startDate: new Date(2026, 1, 20)
         }, {
@@ -117,7 +117,7 @@ export default function Home() {
                 "Cloud security innovations"
             ],
 
-            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1485827404703-89b8fccd5e19?w=800&q=80",
             registrationLink: "#",
             startDate: new Date(2026, 3, 8)
         }, {
@@ -134,7 +134,7 @@ export default function Home() {
                 "International cooperation opportunities"
             ],
 
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdc31b?w=800&q=80",
+            image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
             registrationLink: "#",
             startDate: new Date(2026, 4, 26)
         }, {
