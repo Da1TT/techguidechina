@@ -22,7 +22,6 @@ interface Service {
   description: string;
   icon: string;
 }
-}
 
 export default function Exhibitions() {
   const [showBookingForm, setShowBookingForm] = useState(false);
@@ -106,7 +105,7 @@ export default function Exhibitions() {
       title: "World Artificial Intelligence Conference (WAIC)",
       date: "July 8-10, 2026",
       location: "Shanghai World Expo Exhibition & Convention Center, Shanghai",
-      description: "One of the most influential top-level events globally in the field of artificial intelligence, bringing together leading AI companies and top experts and scholars worldwide to showcase the most cutting-edge AI technologies and applications.",
+      description: "One of most influential top-level events globally in field of artificial intelligence, bringing together leading AI companies and top experts and scholars worldwide to showcase the most cutting-edge AI technologies and applications.",
       highlights: [
         "AI large models and generative AI",
         "Autonomous driving and robotics technology",
@@ -122,7 +121,7 @@ export default function Exhibitions() {
       title: "China Digital Entertainment Expo & Conference (ChinaJoy)",
       date: "July 30 - August 2, 2026",
       location: "Shanghai New International Expo Center, Shanghai",
-      description: "Asia's most influential digital entertainment exhibition, covering games, animation, VR/AR, e-sports, and more, showcasing the latest applications of AI in the digital entertainment field.",
+      description: "Asia's most influential digital entertainment exhibition, covering games, animation, VR/AR, e-sports, and more, showcasing the latest applications of AI in digital entertainment field.",
       highlights: [
         "AI-driven game development technology",
         "VR/AR and immersive experiences",
@@ -143,7 +142,7 @@ export default function Exhibitions() {
       highlights: [
         "5G network technology and applications",
         "IoT and smart cities",
-        "AI applications in network operations",
+        "Cloud computing and big data platforms",
         "Future communication technology outlook"
       ],
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
@@ -155,7 +154,7 @@ export default function Exhibitions() {
       title: "World Internet Conference",
       date: "November 7-9, 2026",
       location: "Wuzhen Internet International Convention and Exhibition Center, Wuzhen, Zhejiang",
-      description: "The top global event in the internet field, focusing on digital economy, artificial intelligence, cybersecurity and other cutting-edge topics, bringing together leading figures in the global internet sector.",
+      description: "The top global event in internet field, focusing on digital economy, artificial intelligence, cybersecurity and other cutting-edge topics, bringing together leading figures in global internet sector.",
       highlights: [
         "Global internet frontier trends",
         "AI ethics and governance",
@@ -173,10 +172,10 @@ export default function Exhibitions() {
       location: "Shenzhen Convention and Exhibition Center, Shenzhen",
       description: "The most influential professional exhibition in China's IoT sector, showcasing cutting-edge technologies and solutions such as IoT sensors, RFID, and smart hardware.",
       highlights: [
-        "IoT sensors and chips",
-        "RFID and automatic identification technology",
-        "AIoT smart hardware",
-        "Industry 4.0 and intelligent manufacturing"
+        "IoT sensor and network technology",
+        "RFID and intelligent recognition",
+        "Smart hardware and embedded systems",
+        "Industrial IoT applications"
       ],
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdc31b?w=800&q=80",
       registrationLink: "https://www.iotexpo.com.cn"
@@ -199,18 +198,18 @@ export default function Exhibitions() {
     }
   ];
 
-  // Exhibition services
+  // Services
   const services: Service[] = [
     {
       id: 1,
-      title: "Pre-exhibition Planning",
-      description: "Comprehensive planning assistance including registration, visa support, and logistics coordination.",
+      title: "Pre-Exhibition Planning",
+      description: "Comprehensive planning including visa assistance, accommodation booking, and scheduling.",
       icon: "fa-calendar-check"
     },
     {
       id: 2,
       title: "On-site Support",
-      description: "Professional interpreters and guides to assist you throughout the exhibition period.",
+      description: "Professional interpreters and guides to assist you throughout exhibition period.",
       icon: "fa-handshake"
     },
     {
@@ -229,7 +228,7 @@ export default function Exhibitions() {
 
   // Handle exhibition registration
   const handleRegistration = (exhibition: Exhibition) => {
-    // Open the booking form modal with the selected exhibition
+    // Open booking form modal with selected exhibition
     setSelectedExhibition(exhibition);
     setShowBookingForm(true);
   };
@@ -238,7 +237,7 @@ export default function Exhibitions() {
   const processSteps = [
     {
       title: "Initial Consultation",
-      description: "We discuss your specific needs, goals, and expectations for the exhibition visit."
+      description: "We discuss your specific needs, goals, and expectations for exhibition visit."
     },
     {
       title: "Customized Planning",
@@ -350,7 +349,7 @@ export default function Exhibitions() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2">Our Exhibition Support Services</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive support to ensure your' exhibition experience is successful and productive
+            Comprehensive support to ensure your exhibition experience is successful and productive
           </p>
         </div>
         
@@ -388,7 +387,7 @@ export default function Exhibitions() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-2">Our Exhibition Support Process</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We provide end-to-end support to ensure your' exhibition experience is successful
+            We provide end-to-end support to ensure your exhibition experience is successful
           </p>
         </div>
         
@@ -407,7 +406,7 @@ export default function Exhibitions() {
                 className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl'}`}>
+                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12'}`}>
                   <h3 className="text-2xl font-bold mb-3">Step {index + 1}: {step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
@@ -437,7 +436,7 @@ export default function Exhibitions() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2">Benefit from Our Expertise</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our founders have deep knowledge of China's tech industry and can provide invaluable insights during your' exhibition visit
+              Our founders have deep knowledge of China's tech industry and can provide invaluable insights during your exhibition visit
             </p>
           </div>
           
@@ -489,7 +488,7 @@ export default function Exhibitions() {
       >
         <h2 className="text-3xl font-bold mb-4">Ready to Explore China's Tech Exhibitions?</h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
-          Let our expert team handle all the details so you can focus on your' business objectives and make the most of your' exhibition experience.
+          Let our expert team handle all the details so you can focus on your business objectives and make the most of your exhibition experience.
         </p>
         <ScrollLink to="/contact" className="bg-white text-red-600 px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block">
           Request Exhibition Support
