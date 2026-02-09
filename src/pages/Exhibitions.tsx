@@ -19,7 +19,9 @@ interface Exhibition {
 interface Service {
   id: number;
   title: string;
-;
+  description: string;
+  icon: string;
+}
 }
 
 export default function Exhibitions() {
