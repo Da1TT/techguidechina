@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cloudflare Workers (visitor counter)
+worker.js
+wrangler-worker.toml
+VISITOR_COUNTER_SETUP.md
+
+# Netlify
+.netlify/
+
+# Vercel
+.vercel/
+
+# Temporary files
+*.tmp
+.cache/
