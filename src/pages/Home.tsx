@@ -587,7 +587,7 @@ export default function Home() {
                             <div
                                 className="w-64 h-64 rounded-full overflow-hidden shadow-lg mb-6 border-4 border-white">
                                 <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
+                                    src="/team/bowen-zhang.jpg"
                                     alt="Zhang Bowen"
                                     className="w-full h-full object-cover" />
                             </div><h3 className="text-2xl font-bold mb-2">Bowen Zhang</h3>
@@ -606,7 +606,7 @@ export default function Home() {
                             <div
                                 className="w-64 h-64 rounded-full overflow-hidden shadow-lg mb-6 border-4 border-white">
                                 <img
-                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
+                                    src="/team/yoyo-guan.jpg"
                                     alt="Guan Yue"
                                     className="w-full h-full object-cover" />
                             </div>
@@ -670,7 +670,7 @@ export default function Home() {
                             <p className="text-gray-600 italic mb-6">"Guan Yue's technical background made our visit to the AI exhibition truly insightful. Her translation services were excellent, and the customized tour of Beijing's tech hubs exceeded our expectations."</p>
                             <div className="flex items-center">
                                 <img
-                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
+                                    src="/team/yoyo-guan.jpg"
                                     alt="Client"
                                     className="w-12 h-12 rounded-full object-cover mr-4" />
                                 <div>

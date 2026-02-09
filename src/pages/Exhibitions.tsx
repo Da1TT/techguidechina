@@ -444,7 +444,7 @@ export default function Exhibitions() {
             <div className="flex items-center">
               <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg mr-6 border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" 
+                  src="/team/bowen-zhang.jpg" 
                   alt="Zhang Bowen" 
                   className="w-full h-full object-cover"
                 />
@@ -461,7 +461,7 @@ export default function Exhibitions() {
             <div className="flex items-center">
               <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg mr-6 border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" 
+                  src="/team/yoyo-guan.jpg" 
                   alt="Guan Yue" 
                   className="w-full h-full object-cover"
                 />

@@ -57,7 +57,7 @@ export default function About() {
     const founders = [{
         name: "Bowen Zhang",
         position: "Founder",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+        image: "/team/bowen-zhang.jpg",
         bio: "With many years of experience in the IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His deep understanding of the Chinese tech ecosystem and international business practices makes him an invaluable resource for clients seeking to navigate China's tech landscape.",
 
         expertise: [
@@ -69,7 +69,7 @@ export default function About() {
     }, {
         name: "Yoyo Guan",
         position: "Founder",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+        image: "/team/yoyo-guan.jpg",
         bio: "With extensive experience in Fortune 500 IT companies, Yoyo Guan brings deep expertise in chip and battery technology. Her technical background and understanding of China's tech ecosystem provide valuable insights for clients attending technology exhibitions. She is passionate about bridging the gap between Chinese tech innovation and international audiences.",
 
         expertise: [
