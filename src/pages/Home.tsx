@@ -192,7 +192,7 @@ export default function Home() {
             <section className="relative h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-black/30 z-10"></div>
                 <img
-                    src="https://images.unsplash.com/photo-1563986768609-322da1353f15?w=800&q=80"
+                    src="https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80"
                     alt="Beijing Tech Exhibition"
                     className="absolute inset-0 w-full h-full object-cover" />
                 <div
