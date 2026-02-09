@@ -84,7 +84,7 @@ export default function Tours() {
         description: "Explore Beijing's iconic landmarks including the Forbidden City, Tiananmen Square, and Temple of Heaven",
         price: 499,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Visit the magnificent Forbidden City",
@@ -142,7 +142,7 @@ export default function Tours() {
         description: "Explore Shanghai's iconic Bund and modern Pudong skyline, experiencing the blend of Eastern and Western cultures.",
         price: 449,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1503917988258-87a9e4bfe0a3?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Stroll along the Bund, admiring century-old buildings",
@@ -171,7 +171,7 @@ export default function Tours() {
         description: "Explore the 8th Wonder of the World - Terracotta Army, and cycle along China's best-preserved Ming Dynasty city wall.",
         price: 599,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Visit the Terracotta Army Museum",
@@ -200,7 +200,7 @@ export default function Tours() {
         description: "Visit the world-famous Giant Panda Breeding Research Base and taste authentic Sichuan cuisine.",
         price: 499,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1534568159869-a33f8760df6d?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
 
         highlights: [
             "Observe cute giant pandas and red pandas",
@@ -229,7 +229,7 @@ export default function Tours() {
         description: "Admire Guilin's magnificent karst landscape and take a traditional bamboo raft ride along the Li River.",
         price: 649,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Take a traditional bamboo raft ride along the Li River",
@@ -258,7 +258,7 @@ export default function Tours() {
         description: "Visit the beautiful West Lake and historic temples in Hangzhou, the 'Paradise on Earth'",
         price: 449,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1506154141823-a68fa28c7544?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Take a boat ride on the beautiful West Lake",
@@ -287,7 +287,7 @@ export default function Tours() {
         description: "Visit the magnificent Mutianyu section of the Great Wall of China, one of the best-preserved sections, with round-trip transportation.",
         price: 549,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
+        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
 
         highlights: [
             "Visit Mutianyu section of the Great Wall with fewer crowds",
@@ -523,7 +523,7 @@ export default function Tours() {
                     </div>
                     <div className="md:w-1/3">
                         <img
-                            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
+                            src="https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80"
                             alt="Custom Tour Planning"
                             className="rounded-xl shadow-lg w-full h-auto border-4 border-white/20" />
                     </div>
