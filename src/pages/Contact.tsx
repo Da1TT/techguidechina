@@ -222,7 +222,7 @@ export default function Contact() {
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-lg h-72">
               <img 
-                src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Map%20showing%20Beijing%20location%20in%20China&sign=f84347b106f0f46beeeb1c01c3e768fb" 
+                src="https://images.unsplash.com/photo-1524661135-423995f272b3?w=800&q=80" 
                 alt="Beijing Map" 
                 className="w-full h-full object-cover"
               />

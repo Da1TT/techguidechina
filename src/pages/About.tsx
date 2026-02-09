@@ -57,7 +57,7 @@ export default function About() {
     const founders = [{
         name: "Bowen Zhang",
         position: "Founder",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/张博文_20260125162507.jpg",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
         bio: "With many years of experience in the IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His deep understanding of the Chinese tech ecosystem and international business practices makes him an invaluable resource for clients seeking to navigate China's tech landscape.",
 
         expertise: [
@@ -69,7 +69,7 @@ export default function About() {
     }, {
         name: "Yoyo Guan",
         position: "Founder",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/355308353282/attachment/关玥_20260125162507.JPG",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
         bio: "With extensive experience in Fortune 500 IT companies, Yoyo Guan brings deep expertise in chip and battery technology. Her technical background and understanding of China's tech ecosystem provide valuable insights for clients attending technology exhibitions. She is passionate about bridging the gap between Chinese tech innovation and international audiences.",
 
         expertise: [
@@ -124,7 +124,7 @@ export default function About() {
                                 stiffness: 300
                             }}>
                             <img
-                                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=IT%20exhibition%20in%20China%2C%20international%20business%20people%20networking&sign=bf5bf10b8e17102d22d0ffd9e343359e"
+                                src="https://images.unsplash.com/photo-1556761176-99b6d062fae6?w=800&q=80"
                                 alt="Tech Exhibition Support"
                                 className="rounded-xl shadow-lg w-full h-80 object-cover" />
                         </motion.div>
@@ -138,7 +138,7 @@ export default function About() {
                                 delay: 0.1
                             }}>
                             <img
-                                src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Professional%20tour%20guide%20with%20foreign%20visitors%2C%20Beijing&sign=81b34affbba2ae51be03d6db1a20e4af"
+                                src="https://images.unsplash.com/photo-1517330127860-0fe21d6b3454?w=800&q=80"
                                 alt="Beijing Tour Services"
                                 className="rounded-xl shadow-lg w-full h-80 object-cover mt-8" />
                         </motion.div>

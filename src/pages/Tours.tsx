@@ -84,7 +84,7 @@ export default function Tours() {
         description: "Explore Beijing's iconic landmarks including the Forbidden City, Tiananmen Square, and Temple of Heaven",
         price: 499,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Beijing%20Forbidden%20City%20and%20Tiananmen%20Square%2C%20historical%20cultural%20tour&sign=bbe233da432647ad12b50b290fac7703",
+        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
 
         highlights: [
             "Visit the magnificent Forbidden City",
@@ -113,7 +113,7 @@ export default function Tours() {
         description: "Experience contemporary Shanghai with visits to the Bund, Pudong Skyline, and vibrant shopping districts",
         price: 399,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Beijing%20CBD%20skyline%2C%20modern%20architecture%2C%20China&sign=1d304d8218d67b5a2eff3eb90b5a92dc",
+        image: "https://images.unsplash.com/photo-1548675773-7e88e58e8c22?w=800&q=80",
 
         highlights: [
             "Visit the Olympic Park and Bird's Nest Stadium",
@@ -142,7 +142,7 @@ export default function Tours() {
         description: "Explore Shanghai's iconic Bund and modern Pudong skyline, experiencing the blend of Eastern and Western cultures.",
         price: 449,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Shanghai%20Bund%20skyline%2C%20modern%20architecture%2C%20China&sign=f5af6966b9959a17cdd5eaf574824500",
+        image: "https://images.unsplash.com/photo-1503917988258-87a9e4bfe0a3?w=800&q=80",
 
         highlights: [
             "Stroll along the Bund, admiring century-old buildings",
@@ -171,7 +171,7 @@ export default function Tours() {
         description: "Explore the 8th Wonder of the World - Terracotta Army, and cycle along China's best-preserved Ming Dynasty city wall.",
         price: 599,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Terracotta%20Army%20in%20Xi%27an%2C%20China&sign=e01f8dafd579f1a0f6f1816ef4c07439",
+        image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
 
         highlights: [
             "Visit the Terracotta Army Museum",
@@ -200,7 +200,7 @@ export default function Tours() {
         description: "Visit the world-famous Giant Panda Breeding Research Base and taste authentic Sichuan cuisine.",
         price: 499,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Giant%20Pandas%20in%20Chengdu%20Panda%20Base%2C%20China&sign=a57fe2f100214b09e300eb71399b3368",
+        image: "https://images.unsplash.com/photo-1534568159869-a33f8760df6d?w=800&q=80",
 
         highlights: [
             "Observe cute giant pandas and red pandas",
@@ -229,7 +229,7 @@ export default function Tours() {
         description: "Admire Guilin's magnificent karst landscape and take a traditional bamboo raft ride along the Li River.",
         price: 649,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Guilin%20landscape%20with%20Li%20River%20and%20karst%20mountains%2C%20China&sign=1d01b3ede316817683e7c89449c3bebf",
+        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
 
         highlights: [
             "Take a traditional bamboo raft ride along the Li River",
@@ -258,7 +258,7 @@ export default function Tours() {
         description: "Visit the beautiful West Lake and historic temples in Hangzhou, the 'Paradise on Earth'",
         price: 449,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=West%20Lake%20in%20Hangzhou%2C%20China%2C%20traditional%20Chinese%20garden&sign=9ed0f0ccb3f54b98baa875169541c46c",
+        image: "https://images.unsplash.com/photo-1506154141823-a68fa28c7544?w=800&q=80",
 
         highlights: [
             "Take a boat ride on the beautiful West Lake",
@@ -287,7 +287,7 @@ export default function Tours() {
         description: "Visit the magnificent Mutianyu section of the Great Wall of China, one of the best-preserved sections, with round-trip transportation.",
         price: 549,
         duration: "Full Day",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Great%20Wall%20of%20China%2C%20Mutianyu%20section%2C%20scenic%20view&sign=93138279c35e7e17e981e6beb4b0fc9a",
+        image: "https://images.unsplash.com/photo-1508804183072-a8a428759cc9?w=800&q=80",
 
         highlights: [
             "Visit Mutianyu section of the Great Wall with fewer crowds",
@@ -523,7 +523,7 @@ export default function Tours() {
                     </div>
                     <div className="md:w-1/3">
                         <img
-                            src="https://space.coze.cn/api/coze_space/gen_image?image_size=portrait_4_3&prompt=Custom%20travel%20planning%2C%20map%20and%20itinerary%2C%20travel%20agent&sign=1379649be089f1d92a4d2ca9eebe36d6"
+                            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
                             alt="Custom Tour Planning"
                             className="rounded-xl shadow-lg w-full h-auto border-4 border-white/20" />
                     </div>
