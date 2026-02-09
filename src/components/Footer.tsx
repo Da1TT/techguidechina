@@ -120,7 +120,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
-          <p>© 2026 TechGuide in China. All rights reserved. - Powered by Netlify</p>
+          <p>© 2026 TechGuide in China. All rights reserved.</p>
         </div>
       </div>
     </footer>
