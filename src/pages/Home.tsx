@@ -3,18 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
 import { toast } from "sonner";
-
-interface Exhibition {
-    id: number;
-    title: string;
-    date: string;
-    location: string;
-    description: string;
-    highlights: string[];
-    image: string;
-    registrationLink: string;
-    startDate: Date;
-}
+import { exhibitions as allExhibitions, Exhibition } from "../data/exhibitions";
 
 export default function Home() {
     const [upcomingExhibitions, setUpcomingExhibitions] = useState<Exhibition[]>([]);
@@ -32,86 +21,26 @@ export default function Home() {
     };
 
     useEffect(() => {
-        const exhibitions: Exhibition[] = [
-            {
-                id: 1,
-                title: "Beijing Smart City Expo",
-                date: "January 12-14, 2026",
-                location: "China National Convention Center, Beijing",
-                description: "Leading exhibition showcasing smart city technologies, IoT, AI applications for urban management and sustainability.",
-                highlights: ["Smart infrastructure solutions", "AI-powered urban management systems", "Sustainable city technologies"],
-                image: "/images/home-smart-city.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 0, 12)
-            },
-            {
-                id: 2,
-                title: "Guangzhou International Digital Economy Expo",
-                date: "February 20-22, 2026",
-                location: "China Import and Export Fair Complex, Guangzhou",
-                description: "Major event focusing on digital economy development, e-commerce innovations, and AI-driven business transformation.",
-                highlights: ["Digital transformation strategies", "AI in e-commerce", "Blockchain applications"],
-                image: "/images/expo-big-data.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 1, 20)
-            },
-            {
-                id: 3,
-                title: "Shanghai AI & Robotics Expo",
-                date: "March 15-17, 2026",
-                location: "Shanghai New International Expo Center",
-                description: "Focus on the latest advancements in artificial intelligence, robotics, automation and their industrial applications.",
-                highlights: ["Service and industrial robotics demonstrations", "AI algorithms and platforms", "Automation solutions"],
-                image: "/images/expo-world-ai-conference.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 2, 15)
-            },
-            {
-                id: 4,
-                title: "China Cybersecurity & Information Technology Expo",
-                date: "April 8-10, 2026",
-                location: "Chongqing International Expo Center",
-                description: "Leading exhibition for cybersecurity technologies, data protection solutions, and IT security management systems.",
-                highlights: ["Network security solutions", "Data privacy protection technologies"],
-                image: "/images/exp-iot.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 3, 8)
-            },
-            {
-                id: 5,
-                title: "China Big Data Expo",
-                date: "May 26-28, 2026",
-                location: "Guiyang International Convention and Exhibition Center",
-                description: "Major event focusing on big data, cloud computing, and AI technologies with international participation.",
-                highlights: ["Big data and cloud computing innovations", "AI integration in various industries"],
-                image: "/images/expo-big-data.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 4, 26)
-            },
-            {
-                id: 6,
-                title: "China International Software & Information Service Fair",
-                date: "June 15-17, 2026",
-                location: "Dalian World Expo Center",
-                description: "Major event for software development, information services, and digital transformation with focus on AI software solutions.",
-                highlights: ["AI software development platforms", "Cloud computing and big data solutions"],
-                image: "/images/expo-software-fair.jpg",
-                registrationLink: "#",
-                startDate: new Date(2026, 5, 15)
-            }
-        ];
-
+        // Get exhibitions sorted by date and show first 4 upcoming ones
+        const sortedExhibitions = [...allExhibitions].sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
         const currentDate = new Date();
-        const futureExhibitions = exhibitions.filter(ex => (ex.startDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24) >= -7);
+        
+        // Get future exhibitions (within 7 days past to future)
+        const futureExhibitions = sortedExhibitions.filter(ex => 
+            (ex.startDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24) >= -7
+        );
+        
         let filtered = futureExhibitions;
 
+        // If we have fewer than 4 future exhibitions, add past ones to reach 4
         if (futureExhibitions.length < 4) {
             const needed = 4 - futureExhibitions.length;
-            const additional = exhibitions.filter(ex => !futureExhibitions.some(f => f.id === ex.id)).sort((a, b) => a.startDate.getTime() - b.startDate.getTime()).slice(0, needed);
-            filtered = [...futureExhibitions, ...additional].sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+            const additional = sortedExhibitions
+                .filter(ex => !futureExhibitions.some(f => f.id === ex.id))
+                .slice(0, needed);
+            filtered = [...futureExhibitions, ...additional];
         }
 
-        filtered.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
         setUpcomingExhibitions(filtered);
     }, []);
 
@@ -306,7 +235,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex flex-col items-center">
                             <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white">
-                                <img src="/team/bowen-zhang.jpg" alt="Bowen Zhang" className="w-full h-full object-cover" />
+                                <img src="/team/bowen-zhang.jpg" alt="Bowen Zhang" className="w w-full h-full object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold mb-2">Bowen Zhang</h3>
                             <p className="text-gray-600 text-center max-w-lg">With many years of experience in IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His expertise ensures clients receive the most insightful guidance during their visit.</p>
@@ -388,7 +317,7 @@ export default function Home() {
             {/* CTA Section */}
             <section className="py-20 px-4 bg-red-600 text-white">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-3xlxl md:text-4xl font-bold mb-6">Ready to Explore China's Tech Scene?</h2>
+                    <h2 className="text-3xl xl md:text-4xl font-bold mb-6">Ready to Explore China's Tech Scene?</h2>
                     <p className="text-lg mb-8 max-w-2xl mx-auto">Let our expert team guide you through China's premier IT and AI exhibitions, with customized support tailored to your business needs.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link to="/contact" className="bg-white text-red-600 px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">Contact Us</Link>
