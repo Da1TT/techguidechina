@@ -123,8 +123,12 @@ export default function Home() {
                         {upcomingExhibitions.slice(0, 4).map((exhibition) => (
                             <motion.div key={exhibition.id} variants={fadeIn} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
                                 <div className="flex flex-col md:flex-row gap-4">
-                                    <div className="md:w-1/4 h-48 md:h-auto bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
-                                        <i className="fa-solid fa-calendar-days text-white text-4xl"></i>
+                                    <div className="md:w-1/4">
+                                        <img 
+                                            src={exhibition.image} 
+                                            alt={exhibition.title} 
+                                            className="h-64 md:h-full w-full object-cover rounded-lg"
+                                        />
                                     </div>
                                     <div className="md:w-3/4 p-6">
                                         <h3 className="text-xl font-bold mb-2 hover:text-red-600 transition-colors">{exhibition.title}</h3>
