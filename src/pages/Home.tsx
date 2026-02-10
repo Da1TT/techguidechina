@@ -40,7 +40,7 @@ export default function Home() {
                 location: "China National Convention Center, Beijing",
                 description: "Leading exhibition showcasing smart city technologies, IoT, AI applications for urban management and sustainability.",
                 highlights: ["Smart infrastructure solutions", "AI-powered urban management systems", "Sustainable city technologies"],
-                image: "/images/hero-bg.svg",
+                image: "/images/home-smart-city.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 0, 12)
             },
@@ -51,7 +51,7 @@ export default function Home() {
                 location: "China Import and Export Fair Complex, Guangzhou",
                 description: "Major event focusing on digital economy development, e-commerce innovations, and AI-driven business transformation.",
                 highlights: ["Digital transformation strategies", "AI in e-commerce", "Blockchain applications"],
-                image: "/images/hero-bg.svg",
+                image: "/images/expo-big-data.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 1, 20)
             },
@@ -62,7 +62,7 @@ export default function Home() {
                 location: "Shanghai New International Expo Center",
                 description: "Focus on the latest advancements in artificial intelligence, robotics, automation and their industrial applications.",
                 highlights: ["Service and industrial robotics demonstrations", "AI algorithms and platforms", "Automation solutions"],
-                image: "/images/hero-bg.svg",
+                image: "/images/expo-world-ai-conference.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 2, 15)
             },
@@ -73,7 +73,7 @@ export default function Home() {
                 location: "Chongqing International Expo Center",
                 description: "Leading exhibition for cybersecurity technologies, data protection solutions, and IT security management systems.",
                 highlights: ["Network security solutions", "Data privacy protection technologies"],
-                image: "/images/hero-bg.svg",
+                image: "/images/exp-iot.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 3, 8)
             },
@@ -84,7 +84,7 @@ export default function Home() {
                 location: "Guiyang International Convention and Exhibition Center",
                 description: "Major event focusing on big data, cloud computing, and AI technologies with international participation.",
                 highlights: ["Big data and cloud computing innovations", "AI integration in various industries"],
-                image: "/images/hero-bg.svg",
+                image: "/images/expo-big-data.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 4, 26)
             },
@@ -95,7 +95,7 @@ export default function Home() {
                 location: "Dalian World Expo Center",
                 description: "Major event for software development, information services, and digital transformation with focus on AI software solutions.",
                 highlights: ["AI software development platforms", "Cloud computing and big data solutions"],
-                image: "/images/hero-bg.svg",
+                image: "/images/expo-software-fair.jpg",
                 registrationLink: "#",
                 startDate: new Date(2026, 5, 15)
             }
@@ -248,7 +248,7 @@ export default function Home() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
-                                <div className="h-64 bg-gradient-to-br from-red-400 to-red-500"></div>
+                                <img src="/images/home-forbidden-city.jpg" alt="Historical & Cultural Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">BESTSELLER</div>
                             </div>
                             <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Historical & Cultural Tour</h3>
@@ -263,7 +263,7 @@ export default function Home() {
                         </motion.div>
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
-                                <div className="h-64 bg-gradient-to-br from-blue-500 to-blue-600"></div>
+                                <img src="/images/home-shanghai-bund.jpg" alt="Modern City Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">MODERN</div>
                             </div>
                             <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Modern City Tour</h3>
@@ -278,7 +278,7 @@ export default function Home() {
                         </motion.div>
                         <motion.div variants={fadeIn} className="group">
                             <div className="relative overflow-hidden rounded-xl mb-4">
-                                <div className="h-64 bg-gradient-to-br from-purple-500 to-purple-600"></div>
+                                <img src="/images/tour-hangzhou-west-lake.jpg" alt="Royal Gardens Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">ROYAL</div>
                             </div>
                             <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Royal Gardens Tour</h3>
@@ -305,15 +305,15 @@ export default function Home() {
                     </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex flex-col items-center">
-                            <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <span className="text-white text-3xl font-bold">B</span>
+                            <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white">
+                                <img src="/team/bowen-zhang.jpg" alt="Bowen Zhang" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold mb-2">Bowen Zhang</h3>
                             <p className="text-gray-600 text-center max-w-lg">With many years of experience in IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His expertise ensures clients receive the most insightful guidance during their visit.</p>
                         </motion.div>
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex flex-col items-center">
-                            <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <span className="text-white text-3xl font-bold">Y</span>
+                            <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white">
+                                <img src="/team/yoyo-guan.jpg" alt="Yoyo Guan" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold mb-2">Yoyo Guan</h3>
                             <p className="text-gray-600 text-center max-w-lg">With extensive experience in Fortune 500 IT companies, Yoyo Guan brings deep expertise in chip and battery technology. Her technical background and understanding of China's tech ecosystem provide valuable insights for clients attending technology exhibitions.</p>
