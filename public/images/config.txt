@@ -1,0 +1,19 @@
+# Image Configuration for TechGuide China
+# All images use local files - no external dependencies
+
+# Exhibition Images (using SVGs for now)
+EXHIBITION_1 = "/images/hero-bg.svg"
+EXHIBITION_2 = "/images/hero-bg.svg"
+EXHIBITION_3 = "/images/hero-bg.svg"
+EXHIBITION_4 = "/images/hero-bg.svg"
+EXHIBITION_5 = "/images/hero-bg.svg"
+EXHIBITION_6 = "/images/hero-bg.svg"
+
+# Tour Images (using gradients)
+TOUR_FORBIDDEN = "gradient-red-400"
+TOUR_MODERN_CITY = "gradient-blue-500"
+TOUR_ROYAL_GARDENS = "gradient-purple-500"
+
+# Team Images
+TEAM_BOWEN = "/images/bowen-zhang.jpg"
+TEAM_YOYO = "/images/yoyo-guan.jpg"

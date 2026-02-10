@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#dc2626"/>
+  <path d="M0 0 L800 0 L800 600 L0 600 Z" fill="none" stroke="#ef4444" stroke-width="4"/>
+  <path d="M200 150 Q400 100 600 450 L700 150" fill="none" stroke="#7f1d1d" stroke-width="8" stroke-linecap="round"/>
+  <path d="M100 450 Q300 300 500 450 L700 450" fill="none" stroke="#ef4444" stroke-width="3"/>
+  <circle cx="400" cy="300" r="80" fill="none" stroke="#7f1d1d" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="400" y="300" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="72" font-weight="bold" font-family="sans-serif">TECH GUIDE IN CHINA</text>
+  <text x="400" y="380" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="24" font-family="sans-serif">Your Gateway to IT &amp; AI Exhibitions</text>
+</svg>
