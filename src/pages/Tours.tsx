@@ -84,7 +84,7 @@ export default function Tours() {
         description: "Explore Beijing's iconic landmarks including the Forbidden City, Tiananmen Square, and Temple of Heaven",
         price: 499,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-beijing-forbidden-city.jpg",
 
         highlights: [
             "Visit the magnificent Forbidden City",
@@ -113,7 +113,7 @@ export default function Tours() {
         description: "Experience contemporary Shanghai with visits to the Bund, Pudong Skyline, and vibrant shopping districts",
         price: 399,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1548675773-7e88e58e8c22?w=800&q=80",
+        image: "/images/tour-shanghai-modern-city.jpg",
 
         highlights: [
             "Visit the Olympic Park and Bird's Nest Stadium",
@@ -142,7 +142,7 @@ export default function Tours() {
         description: "Explore Shanghai's iconic Bund and modern Pudong skyline, experiencing the blend of Eastern and Western cultures.",
         price: 449,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-shanghai-bund.jpg",
 
         highlights: [
             "Stroll along the Bund, admiring century-old buildings",
@@ -171,7 +171,7 @@ export default function Tours() {
         description: "Explore the 8th Wonder of the World - Terracotta Army, and cycle along China's best-preserved Ming Dynasty city wall.",
         price: 599,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-xian-terracotta-army.jpg",
 
         highlights: [
             "Visit the Terracotta Army Museum",
@@ -200,7 +200,7 @@ export default function Tours() {
         description: "Visit the world-famous Giant Panda Breeding Research Base and taste authentic Sichuan cuisine.",
         price: 499,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1518182172843-d6b4f3ff90e6?w=800&q=80",
+        image: "/images/tour-chengdu-panda.jpg",
 
         highlights: [
             "Observe cute giant pandas and red pandas",
@@ -229,7 +229,7 @@ export default function Tours() {
         description: "Admire Guilin's magnificent karst landscape and take a traditional bamboo raft ride along the Li River.",
         price: 649,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-guilin-li-river.jpg",
 
         highlights: [
             "Take a traditional bamboo raft ride along the Li River",
@@ -258,7 +258,7 @@ export default function Tours() {
         description: "Visit the beautiful West Lake and historic temples in Hangzhou, the 'Paradise on Earth'",
         price: 449,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-hangzhou-west-lake.jpg",
 
         highlights: [
             "Take a boat ride on the beautiful West Lake",
@@ -287,7 +287,7 @@ export default function Tours() {
         description: "Visit the magnificent Mutianyu section of the Great Wall of China, one of the best-preserved sections, with round-trip transportation.",
         price: 549,
         duration: "Full Day",
-        image: "https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80",
+        image: "/images/tour-great-wall.jpg",
 
         highlights: [
             "Visit Mutianyu section of the Great Wall with fewer crowds",
@@ -523,7 +523,7 @@ export default function Tours() {
                     </div>
                     <div className="md:w-1/3">
                         <img
-                            src="https://images.unsplash.com/photo-1526374966328-7f61ad4dd0c0?w=800&q=80"
+                            src="/images/tour-hangzhou-west-lake.jpg"
                             alt="Custom Tour Planning"
                             className="rounded-xl shadow-lg w-full h-auto border-4 border-white/20" />
                     </div>

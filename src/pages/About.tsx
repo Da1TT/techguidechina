@@ -124,7 +124,7 @@ export default function About() {
                                 stiffness: 300
                             }}>
                             <img
-                                src="https://images.unsplash.com/photo-1556761176-99b6d062fae6?w=800&q=80"
+                                src="/images/about-team.jpg"
                                 alt="Tech Exhibition Support"
                                 className="rounded-xl shadow-lg w-full h-80 object-cover" />
                         </motion.div>
@@ -138,7 +138,7 @@ export default function About() {
                                 delay: 0.1
                             }}>
                             <img
-                                src="https://images.unsplash.com/photo-1517330127860-0fe21d6b3454?w=800&q=80"
+                                src="/images/about-office.jpg"
                                 alt="Beijing Tour Services"
                                 className="rounded-xl shadow-lg w-full h-80 object-cover mt-8" />
                         </motion.div>

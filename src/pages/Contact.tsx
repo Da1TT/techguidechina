@@ -222,7 +222,7 @@ export default function Contact() {
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-lg h-72">
               <img 
-                src="https://images.unsplash.com/photo-1524661135-423995f272b3?w=800&q=80" 
+                src="/images/contact-meeting.jpg" 
                 alt="Beijing Map" 
                 className="w-full h-full object-cover"
               />
