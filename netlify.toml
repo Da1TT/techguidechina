@@ -1,11 +1,11 @@
-# Netlify Configuration - Simplified and Optimized
+# Netlify Configuration
 [build]
-  # Use pnpm with --no-frozen-lockfile to allow lockfile updates
-  command = "pnpm install --no-frozen-lockfile && pnpm run build"
+  # Use npm for builds
+  command = "npm install && npm run build"
   # Publish directory
   publish = "dist"
   
-  # Environment variables to ensure proper Node version
+  # Environment variables
   environment = { NODE_VERSION = "18" }
 
 # Single Page Application redirect rules

@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 .pnpm-store/
-package-lock.json
+# package-lock.json  # We use npm now
 yarn.lock
 pnpm-lock.yaml
 
