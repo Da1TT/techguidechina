@@ -1,12 +1,12 @@
 # Netlify Configuration - Simplified and Optimized
 [build]
-  # Use a more reliable build command with legacy peer deps
-  command = "npm install --legacy-peer-deps && npm run build"
+  # Use pnpm with --no-frozen-lockfile to allow lockfile updates
+  command = "pnpm install --no-frozen-lockfile && pnpm run build"
   # Publish directory
   publish = "dist"
   
-  # Environment variables to ensure proper Node version and dependency installation
-  environment = { NODE_VERSION = "18", NPM_CONFIG_PRODUCTION = "false" }
+  # Environment variables to ensure proper Node version
+  environment = { NODE_VERSION = "18" }
 
 # Single Page Application redirect rules
 [[redirects]]
