@@ -412,9 +412,6 @@ export default function Tours() {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                         <div
                             className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80"></div>
-                        <div
-                            className="absolute top-4 right-4 bg-red-600 text-white text-sm px-3 py-1 rounded-full shadow-lg">${tour.price}
-                        </div>
                         <div className="absolute bottom-4 left-4 right-4 text-white">
                             <h3 className="text-xl font-bold mb-1">{tour.title}</h3>
                             <div

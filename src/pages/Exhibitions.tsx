@@ -2,6 +2,7 @@ import { useState } from "react";
 import BookingForm from "../components/BookingForm";
 import { motion } from "framer-motion";
 import ScrollLink from "../components/ScrollLink";
+import StructuredData, { eventSchema, breadcrumbSchema } from "../components/StructuredData";
 import { exhibitions, Exhibition } from "../data/exhibitions";
 
 // Types for service
@@ -91,8 +92,19 @@ export default function Exhib() {
     }
   ];
 
+  // SEO - 面包屑结构化数据
+  const breadcrumbData = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Exhibitions", url: "/exhibitions" }
+  ]);
+
   return (
     <div className="pt-24 pb-16 px-4">
+      {/* SEO 结构化数据 */}
+      <StructuredData data={breadcrumbData} />
+      {exhibitions.slice(0, 5).map(exhibition => (
+        <StructuredData key={exhibition.id} data={eventSchema(exhibition)} />
+      ))}
       {/* Page Header */}
       <motion.div 
         initial="hidden"
@@ -281,7 +293,7 @@ export default function Exhib() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="flex items-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg mr-6 border-4 border-white">
+              <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg mr-6 border-4 border-white flex-shrink-0">
                 <img 
                   src="/team/bowen-zhang.jpg" 
                   alt="Zhang Bowen" 
@@ -290,7 +302,7 @@ export default function Exhib() {
               </div>
                <div>
                  <h3 className="text-xl font-bold mb-1">Bowen Zhang</h3>
-                 <p className="text-red-600 font-medium mb-2">Co-founder & CEO</p>
+                 <p className="text-red-600 font-medium mb-2">Founder</p>
                  <p className="text-gray-600">
                    With extensive experience in the IT and internet industry, Bowen Zhang has in-depth knowledge of China's technology companies and exhibitions across the country.
                  </p>
@@ -298,7 +310,7 @@ export default function Exhib() {
             </div>
             
             <div className="flex items-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden shadow-ig mr-6 border-4 border-white">
+              <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg mr-6 border-4 border-white flex-shrink-0">
                 <img 
                   src="/team/yoyo-guan.jpg" 
                   alt="Guan Yue" 
@@ -307,7 +319,7 @@ export default function Exhib() {
               </div>
               <div>
                  <h3 className="text-xl font-bold mb-1">Yoyo Guan</h3>
-                 <p className="text-red-600 font-medium mb-2">Co-founder & CTO</p>
+                 <p className="text-red-600 font-medium mb-2">Founder</p>
                  <p className="text-gray-600">
                    With extensive experience in Fortune 500 IT companies, Yoyo Guan brings deep expertise in chip and battery technology, providing valuable technical insights for clients.
                  </p>

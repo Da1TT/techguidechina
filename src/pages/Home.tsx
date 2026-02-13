@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
+import LazyImage from "../components/LazyImage";
 import { toast } from "sonner";
 import { exhibitions as allExhibitions, Exhibition } from "../data/exhibitions";
 
@@ -124,7 +125,7 @@ export default function Home() {
                             <motion.div key={exhibition.id} variants={fadeIn} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100">
                                 <div className="flex flex-col md:flex-row gap-4">
                                     <div className="md:w-1/4">
-                                        <img 
+                                        <LazyImage 
                                             src={exhibition.image} 
                                             alt={exhibition.title} 
                                             className="h-64 md:h-full w-full object-cover rounded-lg"
