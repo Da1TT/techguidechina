@@ -5,11 +5,14 @@ import BookingForm from "../components/BookingForm";
 import LazyImage from "../components/LazyImage";
 import { toast } from "sonner";
 import { exhibitions as allExhibitions, Exhibition } from "../data/exhibitions";
+import { tours as allTours, Tour } from "../data/tours";
 
 export default function Home() {
     const [upcomingExhibitions, setUpcomingExhibitions] = useState<Exhibition[]>([]);
+    const [featuredTours, setFeaturedTours] = useState<Tour[]>([]);
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedExhibition, setSelectedExhibition] = useState<Exhibition | null>(null);
+    const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
 
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
@@ -25,12 +28,12 @@ export default function Home() {
         // Get exhibitions sorted by date and show first 4 upcoming ones
         const sortedExhibitions = [...allExhibitions].sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
         const currentDate = new Date();
-        
+
         // Get future exhibitions (within 7 days past to future)
-        const futureExhibitions = sortedExhibitions.filter(ex => 
+        const futureExhibitions = sortedExhibitions.filter(ex =>
             (ex.startDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24) >= -7
         );
-        
+
         let filtered = futureExhibitions;
 
         // If we have fewer than 4 future exhibitions, add past ones to reach 4
@@ -43,10 +46,18 @@ export default function Home() {
         }
 
         setUpcomingExhibitions(filtered);
+
+        // Set featured tours (first 3)
+        setFeaturedTours(allTours.slice(0, 3));
     }, []);
 
     const handleRegister = (exhibition: Exhibition) => {
         setSelectedExhibition(exhibition);
+        setShowBookingForm(true);
+    };
+
+    const handleTourBooking = (tour: Tour) => {
+        setSelectedTour(tour);
         setShowBookingForm(true);
     };
 
@@ -180,51 +191,32 @@ export default function Home() {
                     </div>
 
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <motion.div variants={fadeIn} className="group">
-                            <div className="relative overflow-hidden rounded-xl mb-4">
-                                <img src="/images/home-forbidden-city.jpg" alt="Historical & Cultural Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">BESTSELLER</div>
-                            </div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Historical & Cultural Tour</h3>
-                            <p className="text-gray-600 mb-4">Explore Beijing's iconic landmarks including Forbidden City, Tiananmen Square, and Temple of Heaven.</p>
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <span className="text-xl font-bold text-red-600">$499</span>
-                                    <span className="text-gray-500 text-sm">/ per person</span>
+                        {featuredTours.map((tour) => (
+                            <motion.div key={tour.id} variants={fadeIn} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                                <div className="relative overflow-hidden mb-4">
+                                    <img
+                                        src={tour.image}
+                                        alt={tour.title}
+                                        className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    {tour.badge && (
+                                        <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">
+                                            {tour.badge}
+                                        </div>
+                                    )}
                                 </div>
-                                <Link to="/tours" className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors">Book Now</Link>
-                            </div>
-                        </motion.div>
-                        <motion.div variants={fadeIn} className="group">
-                            <div className="relative overflow-hidden rounded-xl mb-4">
-                                <img src="/images/home-shanghai-bund.jpg" alt="Modern City Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">MODERN</div>
-                            </div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Modern City Tour</h3>
-                            <p className="text-gray-600 mb-4">Experience contemporary Beijing with visits to Olympic Park, CCTV Tower, and vibrant shopping districts.</p>
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <span className="text-xl font-bold text-red-600">$399</span>
-                                    <span className="text-gray-500 text-sm">/ per person</span>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">{tour.title}</h3>
+                                    <p className="text-gray-600 mb-4 line-clamp-3">{tour.description}</p>
+                                    <button
+                                        onClick={() => handleTourBooking(tour)}
+                                        className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2 rounded-full transition-colors w-full"
+                                    >
+                                        Book Now
+                                    </button>
                                 </div>
-                                <Link to="/tours" className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors">Book Now</Link>
-                            </div>
-                        </motion.div>
-                        <motion.div variants={fadeIn} className="group">
-                            <div className="relative overflow-hidden rounded-xl mb-4">
-                                <img src="/images/tour-hangzhou-west-lake.jpg" alt="Royal Gardens Tour" className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute top-4 left-4 bg-white text-sm px-3 py-1 rounded-full">ROYAL</div>
-                            </div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-red-600 transition-colors">Royal Gardens Tour</h3>
-                            <p className="text-gray-600 mb-4">Visit exquisite imperial gardens such as Summer Palace and Yuanmingyuan.</p>
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <span className="text-xl font-bold text-red-600">$449</span>
-                                    <span className="text-gray-500 text-sm">/ per person</span>
-                                </div>
-                                <Link to="/tours" className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full transition-colors">Book Now</Link>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </div>
             </section>
@@ -334,6 +326,9 @@ export default function Home() {
             {/* Booking Form Modal */}
             {showBookingForm && selectedExhibition && (
                 <BookingForm onClose={() => setShowBookingForm(false)} serviceType="exhibition" serviceName={selectedExhibition.title} />
+            )}
+            {showBookingForm && selectedTour && !selectedExhibition && (
+                <BookingForm onClose={() => setShowBookingForm(false)} serviceType="tour" serviceName={selectedTour.title} />
             )}
         </div>
     );
