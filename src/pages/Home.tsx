@@ -13,6 +13,7 @@ export default function Home() {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedExhibition, setSelectedExhibition] = useState<Exhibition | null>(null);
     const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+    const [showFloatingCTA, setShowFloatingCTA] = useState(false);
 
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
@@ -23,6 +24,15 @@ export default function Home() {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
     };
+
+    // Show floating CTA after scrolling past hero section
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowFloatingCTA(window.scrollY > window.innerHeight * 0.6);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     useEffect(() => {
         // Get exhibitions sorted by date and show first 4 upcoming ones
@@ -63,56 +73,73 @@ export default function Home() {
 
     return (
         <div className="font-sans">
-            {/* Hero Section */}
+            {/* Hero Section - Exhibition Focused */}
             <section className="relative h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 z-10"></div>
                 <div className="relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-4">
-                    <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mb-6"></motion.div>
-                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl">Tech Guide in China - Your Gateway to IT & AI Exhibitions</motion.h1>
-                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }} className="text-lg md:text-xl mb-8 max-w-2xl">Professional guidance for international visitors to China's leading IT and AI exhibitions, with additional tailored Beijing tour services.</motion.p>
+                    <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="mb-6">
+                        <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">Trusted by 500+ International Exhibitors</span>
+                    </motion.div>
+                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl">Your Expert Exhibition Guide in China</motion.h1>
+                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.8 }} className="text-lg md:text-xl mb-8 max-w-2xl">Professional translation, logistics support, and business guidance for US & European companies attending China's leading IT & AI exhibitions. 24/7 English support.</motion.p>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.1 }} className="flex flex-col sm:flex-row gap-4">
-                        <Link to="/exhibitions" className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">Explore Exhibitions</Link>
-                        <Link to="/tours" className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-all">China Tours</Link>
+                        <button onClick={() => setShowBookingForm(true)} className="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Exhibition Service</button>
+                        <Link to="/exhibitions" className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-all">View Upcoming Exhibitions</Link>
+                    </motion.div>
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.4 }} className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+                        <div className="flex items-center gap-2">
+                            <i className="fa-solid fa-check-circle"></i>
+                            <span>Professional Translation</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <i className="fa-solid fa-check-circle"></i>
+                            <span>Airport Pickup & Logistics</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <i className="fa-solid fa-check-circle"></i>
+                            <span>Business Networking</span>
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Services Section */}
+            {/* Services Section - Exhibition Focused */}
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-center mb-16">
-                        <span className="text-red-600 font-medium">OUR SERVICES</span>
-                        <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Comprehensive Solutions for Your Stay in China</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">We provide all the support you need to make your visit to China memorable and successful</p>
+                        <span className="text-red-600 font-medium">OUR EXHIBITION SERVICES</span>
+                        <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Complete Support for Your Exhibition Visit</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">Everything you need for a successful exhibition experience in China, from arrival to departure</p>
                     </motion.div>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+                        <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow relative">
+                            <div className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">MOST POPULAR</div>
                             <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i className="fa-solid fa-building text-2xl"></i>
+                                <i className="fa-solid fa-language text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">IT & AI Exhibition Support</h3>
-                            <p className="text-gray-600">Professional guidance for China's leading technology exhibitions with expert insights.</p>
+                            <h3 className="text-xl font-bold mb-3">Professional Translation</h3>
+                            <p className="text-gray-600">Expert Chinese-English translation for meetings, negotiations, and exhibition materials.</p>
                         </motion.div>
                         <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
                             <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i className="fa-solid fa-map-location-dot text-2xl"></i>
+                                <i className="fa-solid fa-plane-arrival text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Beijing Tours</h3>
-                            <p className="text-gray-600">Expert-led tours of Beijing's iconic landmarks with professional translation services.</p>
+                            <h3 className="text-xl font-bold mb-3">Airport Pickup & Drop-off</h3>
+                            <p className="text-gray-600">Meet and greet at airport with private vehicle transfer to your hotel or exhibition venue.</p>
                         </motion.div>
                         <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
                             <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i className="fa-solid fa-calendar-check text-2xl"></i>
+                                <i className="fa-solid fa-handshake text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Custom Itineraries</h3>
-                            <p className="text-gray-600">Personalized travel plans tailored to your interests, needs, and schedule.</p>
+                            <h3 className="text-xl font-bold mb-3">Business Networking</h3>
+                            <p className="text-gray-600">Introductions to Chinese tech companies and potential business partners.</p>
                         </motion.div>
                         <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
                             <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i className="fa-solid fa-car text-2xl"></i>
+                                <i className="fa-solid fa-hotel text-2xl"></i>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Transport & Logistics</h3>
-                            <p className="text-gray-600">Premium transportation services with professional drivers and comfortable vehicles.</p>
+                            <h3 className="text-xl font-bold mb-3">Hotel & Accommodation</h3>
+                            <p className="text-gray-600">Premium hotel recommendations and booking assistance near exhibition venues.</p>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -157,7 +184,7 @@ export default function Home() {
                                                 </span>
                                             ))}
                                         </div>
-                                        <div className="flex flex-col sm:flex-row gap-3 md:justify-between md:items-center">
+                                        <div className="flex flex-col sm:flex-row与其他 gap-3 md:justify-between md:items-center">
                                             <div className="text-sm text-gray-500">
                                                 <i className="fa-solid fa-clock mr-1"></i>
                                                 <span>Starts in {Math.floor((exhibition.startDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days</span>
@@ -190,9 +217,9 @@ export default function Home() {
                         </motion.div>
                     </div>
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {featuredTours.map((tour) => (
-                            <motion.div key={tour.id} variants={fadeIn} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                            <motion.div key={tour.id} variants={fadeIn} className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xlx transition-all">
                                 <div className="relative overflow-hidden mb-4">
                                     <img
                                         src={tour.image}
@@ -232,7 +259,7 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="flex flex-col items-center">
                             <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white">
-                                <img src="/team/bowen-zhang.jpg" alt="Bowen Zhang" className="w w-full h-full object-cover" />
+                                <img src="/team/bowen-zhang.jpg" alt="Bowen Zhang" className="w-full h-full object-cover" />
                             </div>
                             <h3 className="text-2xl font-bold mb-2">Bowen Zhang</h3>
                             <p className="text-gray-600 text-center max-w-lg">With many years of experience in IT and internet industry, Bowen Zhang has extensive knowledge of China's technology companies and exhibitions across the country. His expertise ensures clients receive the most insightful guidance during their visit.</p>
@@ -314,14 +341,26 @@ export default function Home() {
             {/* CTA Section */}
             <section className="py-20 px-4 bg-red-600 text-white">
                 <div className="max-w-7xl mx-auto text-center">
-                    <h2 className="text-3xl xl md:text-4xl font-bold mb-6">Ready to Explore China's Tech Scene?</h2>
-                    <p className="text-lg mb-8 max-w-2xl mx-auto">Let our expert team guide you through China's premier IT and AI exhibitions, with customized support tailored to your business needs.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Succeed at China's Top Exhibitions?</h2>
+                    <p className="text-lg mb-8 max-w-2xl mx-auto">Get expert translation, logistics support, and business networking assistance for your next exhibition in China. We support US & European companies every step of the way.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/contact" className="bg-white text-red-600 px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">Contact Us</Link>
+                        <button onClick={() => setShowBookingForm(true)} className="bg-white text-red-600 px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">Get Free Consultation</button>
                         <Link to="/exhibitions" className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-all">View Exhibitions</Link>
                     </div>
                 </div>
             </section>
+
+            {/* Floating CTA Button */}
+            <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: showFloatingCTA ? 1 : 0, scale: showFloatingCTA ? 1 : 0.8 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setShowBookingForm(true)}
+                className="fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 hidden md:flex"
+            >
+                <i className="fa-solid fa-comments"></i>
+                <span className="font-medium">Get Exhibition Service</span>
+            </motion.button>
 
             {/* Booking Form Modal */}
             {showBookingForm && selectedExhibition && (
@@ -329,6 +368,9 @@ export default function Home() {
             )}
             {showBookingForm && selectedTour && !selectedExhibition && (
                 <BookingForm onClose={() => setShowBookingForm(false)} serviceType="tour" serviceName={selectedTour.title} />
+            )}
+            {showBookingForm && !selectedExhibition && !selectedTour && (
+                <BookingForm onClose={() => setShowBookingForm(false)} serviceType="exhibition" serviceName="Exhibition Service" />
             )}
         </div>
     );
