@@ -6,6 +6,7 @@ import Tours from "./pages/Tours";
 import Exhibitions from "./pages/Exhibitions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/exhibitions" element={<Exhibitions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
             {/* 添加404路由以处理未找到的路径 */}
             <Route path="*" element={<Home />} />
           </Routes>

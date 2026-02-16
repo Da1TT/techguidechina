@@ -28,6 +28,7 @@ export default function Header() {
     { path: "/", label: "Home" },
     { path: "/exhibitions", label: "Exhibitions" },
     { path: "/tours", label: "China Tours" },
+    { path: "/blog", label: "Blog" },
     { path: "/about", label: "About Us" },
     { path: "/contact", label: "Contact" },
   ];
