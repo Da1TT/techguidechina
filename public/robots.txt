@@ -1,0 +1,11 @@
+# robots.txt for Tech Guide in China
+
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.tourbusinessinchina.com/sitemap.xml
