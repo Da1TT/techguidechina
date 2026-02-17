@@ -202,7 +202,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg mb-1">Email Address</h3>
-                    <p className="text-gray-600">yoyo4515@163.com</p>
+                    <p className="text-gray-600">yoyo4615@163.com</p>
                   </div>
                 </li>
                 <li className="flex items-start">
