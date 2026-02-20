@@ -48,6 +48,18 @@ export default function Contact() {
         if (response.ok) {
           const data = await response.json();
           toast.success('Your message has been sent! We will contact you shortly.');
+          
+          // Track contact form submission in Google Analytics
+          if (typeof window !== 'undefined' && (window as any).gtag) {
+            const formData = new FormData(form);
+            (window as any).gtag('event', 'contact_form_submission', {
+              'event_category': 'Lead Generation',
+              'event_label': 'Contact Page',
+              'subject': formData.get('subject') || 'N/A'
+            });
+            console.log('Google Analytics event tracked: contact_form_submission');
+          }
+          
           form.reset();
         } else {
           // 获取详细的错误信息

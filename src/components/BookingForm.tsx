@@ -137,6 +137,19 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
           // Show success message
           toast.success(`Thank you ${formData.name}! Your inquiry for ${serviceName} has been received. We will contact you at ${formData.email} within 24 hours.`);
           
+          // Track form submission in Google Analytics
+          if (typeof window !== 'undefined' && (window as any).gtag) {
+            (window as any).gtag('event', 'form_submission', {
+              'event_category': 'Lead Generation',
+              'event_label': serviceName,
+              'service_type': serviceType,
+              'country': formData.country,
+              'participants_count': formData.participantsCount,
+              'exhibition_name': formData.exhibitionName || 'N/A'
+            });
+            console.log('Google Analytics event tracked: form_submission');
+          }
+          
           // Close modal
           onClose();
         } else {
