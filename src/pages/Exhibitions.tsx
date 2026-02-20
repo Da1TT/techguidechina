@@ -3,6 +3,7 @@ import BookingForm from "../components/BookingForm";
 import { motion } from "framer-motion";
 import ScrollLink from "../components/ScrollLink";
 import StructuredData, { eventSchema, breadcrumbSchema } from "../components/StructuredData";
+import SEO from "../components/SEO";
 import { exhibitions, Exhibition } from "../data/exhibitions";
 
 // Types for service
@@ -100,6 +101,15 @@ export default function Exhib() {
 
   return (
     <div className="pt-24 pb-16 px-4">
+      {/* SEO */}
+      <SEO
+        title="IT & AI Exhibitions in China 2026 | Complete Guide & Support Services"
+        description="Discover China's leading IT and AI exhibitions. Get comprehensive support including translation, logistics, accommodation, and business networking for international exhibitors."
+        keywords="China IT exhibitions, AI expos, Shanghai CES, Beijing tech shows, Canton Fair guide, China trade show support"
+        url="/exhibitions"
+        image="/images/exhibition.jpg"
+      />
+
       {/* SEO 结构化数据 */}
       <StructuredData data={breadcrumbData} />
       {exhibitions.slice(0, 5).map(exhibition => (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BookingForm from "../components/BookingForm";
+import SEO from "../components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { tours, Tour } from "../data/tours";
@@ -96,6 +97,15 @@ export default function Tours() {
 
     return (
         <div className="pt-24 pb-16 px-4">
+            {/* SEO */}
+            <SEO
+                title="China Private Tours | Beijing, Shanghai, & Custom Travel Services"
+                description="Premium private tours across China including Beijing, Shanghai, and more. Professional guides, private transportation, translation services, and custom itineraries."
+                keywords="China private tours, Beijing tours, Shanghai guide, China travel agency, custom China itinerary"
+                url="/tours"
+                image="/images/tour-beijing.jpg"
+            />
+
             {/* Hero Section */}
             <motion.div
                 initial="hidden"

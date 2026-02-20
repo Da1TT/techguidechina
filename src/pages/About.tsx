@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 
 interface TimelineItem {
     year: string;
@@ -82,7 +83,14 @@ export default function About() {
 
     return (
         <div className="pt-24 pb-16 px-4">
-            {}
+            {/* SEO */}
+            <SEO
+                title="About Tech Guide in China | Our Mission & Expert Team"
+                description="Learn about Tech Guide in China's mission to provide exceptional exhibition and travel services. Meet our expert team with deep knowledge of China's tech industry."
+                keywords="Tech Guide in China, China exhibition services, China travel services, our team"
+                url="/about"
+            />
+
             <motion.div
                 initial="hidden"
                 whileInView="visible"

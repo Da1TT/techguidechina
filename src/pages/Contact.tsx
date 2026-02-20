@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { toast } from "sonner";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -88,6 +89,14 @@ export default function Contact() {
   
   return (
     <div className="pt-24 pb-16 px-4">
+      {/* SEO */}
+      <SEO
+        title="Contact Us | China Exhibition & Travel Support Services"
+        description="Get in touch with Tech Guide in China for professional exhibition and travel services. Request a consultation or booking inquiry."
+        keywords="contact Tech Guide in China, China exhibition inquiry, travel services contact"
+        url="/contact"
+      />
+
       {/* Page Header */}
       <motion.div 
         initial="hidden"

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
 import LazyImage from "../components/LazyImage";
+import SEO from "../components/SEO";
 import { toast } from "sonner";
 import { exhibitions as allExhibitions, Exhibition } from "../data/exhibitions";
 import { tours as allTours, Tour } from "../data/tours";
@@ -73,6 +74,14 @@ export default function Home() {
 
     return (
         <div className="font-sans">
+            {/* SEO */}
+            <SEO
+                title="China Exhibition Guide | Professional Translation & Support for International Exhibitors"
+                description="Expert exhibition guide services for international companies attending China's IT & AI exhibitions. Professional translation, airport pickup, business networking, and 24/7 English support."
+                keywords="China exhibition guide, Shanghai Expo, Beijing exhibition, Canton Fair, China trade show guide, China business travel"
+                image="/images/exhibition.jpg"
+            />
+
             {/* Hero Section - Exhibition Focused */}
             <section className="relative h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-600 to-red-700 z-10"></div>
