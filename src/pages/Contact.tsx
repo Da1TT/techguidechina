@@ -1,29 +1,29 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { toast } from "sonner";
-import SEO from "../components/SEO";
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { toast } from 'sonner';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  
+
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
-  
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   // Handle form submission using Formspree
@@ -32,52 +32,54 @@ export default function Contact() {
     if (formRef.current) {
       // 使用Formspree发送表单数据
       const form = formRef.current;
-      
+
       try {
         // 使用Formspree推荐的标准方法
         const response = await fetch('https://formspree.io/f/xojdrkdr', {
           method: 'POST',
           headers: {
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
           body: new FormData(form),
         });
-        
+
         // 记录完整的响应信息用于调试
         console.log('Formspree response status:', response.status);
-        
+
         if (response.ok) {
-          const data = await response.json();
+          const _data = await response.json();
           toast.success('Your message has been sent! We will contact you shortly.');
-          
+
           // Track contact form submission in Google Analytics
           if (typeof window !== 'undefined' && (window as any).gtag) {
             const formData = new FormData(form);
             (window as any).gtag('event', 'contact_form_submission', {
-              'event_category': 'Lead Generation',
-              'event_label': 'Contact Page',
-              'subject': formData.get('subject') || 'N/A'
+              event_category: 'Lead Generation',
+              event_label: 'Contact Page',
+              subject: formData.get('subject') || 'N/A',
             });
             console.log('Google Analytics event tracked: contact_form_submission');
           }
-          
+
           form.reset();
         } else {
           // 获取详细的错误信息
           const errorText = await response.text();
           console.error('Form submission error:', response.status, response.statusText, errorText);
-          
+
           try {
             // 尝试解析JSON格式的错误信息
-            const errorData = JSON.parse(errorText);
+            const errorData = JSON.parse(errorText) as { error?: string };
             if (errorData.error) {
               toast.error(`Oops! ${errorData.error}`);
             } else {
               toast.error('Oops! There was a problem submitting your form. Please try again.');
             }
-          } catch (jsonError) {
+          } catch {
             // 如果错误信息不是JSON格式，显示原始错误文本
-            toast.error(`Oops! ${errorText || 'There was a problem submitting your form. Please try again.'}`);
+            toast.error(
+              `Oops! ${errorText || 'There was a problem submitting your form. Please try again.'}`
+            );
           }
         }
       } catch (error) {
@@ -86,7 +88,7 @@ export default function Contact() {
       }
     }
   };
-  
+
   return (
     <div className="pt-24 pb-16 px-4">
       {/* SEO */}
@@ -98,7 +100,7 @@ export default function Contact() {
       />
 
       {/* Page Header */}
-      <motion.div 
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -108,12 +110,13 @@ export default function Contact() {
         <span className="text-red-600 font-medium">Contact</span>
         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">Get in Touch With Us</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Have questions or need assistance with planning your trip or exhibition visit? Our team is here to help.
+          Have questions or need assistance with planning your trip or exhibition visit? Our team is
+          here to help.
         </p>
       </motion.div>
-  
+
       {/* Contact Form and Information */}
-      <motion.div 
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -122,7 +125,7 @@ export default function Contact() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -196,9 +199,9 @@ export default function Contact() {
               </button>
             </form>
           </motion.div>
-  
+
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -239,21 +242,21 @@ export default function Contact() {
                 </li>
               </ul>
             </div>
-  
+
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-lg h-72">
-              <img 
-                src="/images/contact-meeting.jpg" 
-                alt="Beijing Map" 
+              <img
+                src="/images/contact-meeting.jpg"
+                alt="Beijing Map"
                 className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
         </div>
       </motion.div>
-  
+
       {/* FAQ Section */}
-      <motion.div 
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -262,12 +265,10 @@ export default function Contact() {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Frequently Asked Questions</h2>
-          <p className="text-gray-600">
-            Find answers to common questions about our services
-          </p>
+          <p className="text-gray-600">Find answers to common questions about our services</p>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -277,28 +278,41 @@ export default function Contact() {
           <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
             <h3 className="text-xl font-bold mb-2">How far in advance should I book my tour?</h3>
             <p className="text-gray-600">
-              We recommend booking your tour at least 2-4 weeks in advance to ensure availability, especially during peak travel seasons. For custom tours or group bookings, we suggest contacting us 4-6 weeks ahead of time.
+              We recommend booking your tour at least 2-4 weeks in advance to ensure availability,
+              especially during peak travel seasons. For custom tours or group bookings, we suggest
+              contacting us 4-6 weeks ahead of time.
             </p>
           </motion.div>
-          
+
           <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
-            <h3 className="text-xl font-bold mb-2">What is included in your exhibition support services?</h3>
+            <h3 className="text-xl font-bold mb-2">
+              What is included in your exhibition support services?
+            </h3>
             <p className="text-gray-600">
-              Our exhibition support includes visa assistance, booth setup coordination, translation services, logistics support, transportation, accommodation arrangements, and on-site assistance throughout the exhibition period.
+              Our exhibition support includes visa assistance, booth setup coordination, translation
+              services, logistics support, transportation, accommodation arrangements, and on-site
+              assistance throughout the exhibition period.
             </p>
           </motion.div>
-          
+
           <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
-            <h3 className="text-xl font-bold mb-2">Can you help with visa applications for China?</h3>
+            <h3 className="text-xl font-bold mb-2">
+              Can you help with visa applications for China?
+            </h3>
             <p className="text-gray-600">
-              Yes, we provide visa application assistance for international visitors coming to China for tours, exhibitions, or business purposes. We can guide you through the application process and provide necessary documentation.
+              Yes, we provide visa application assistance for international visitors coming to China
+              for tours, exhibitions, or business purposes. We can guide you through the application
+              process and provide necessary documentation.
             </p>
           </motion.div>
-          
+
           <motion.div variants={fadeIn} className="bg-white rounded-xl shadow p-6">
             <h3 className="text-xl font-bold mb-2">How does the booking process work?</h3>
             <p className="text-gray-600">
-              To book our services, simply fill out the contact form or email us directly at yoyo4515@163.com. Our team will respond within 24 hours to discuss your requirements and provide a detailed proposal. Once confirmed, we'll handle all arrangements and keep you updated throughout the process.
+              To book our services, simply fill out the contact form or email us directly at
+              yoyo4515@163.com. Our team will respond within 24 hours to discuss your requirements
+              and provide a detailed proposal. Once confirmed, we'll handle all arrangements and
+              keep you updated throughout the process.
             </p>
           </motion.div>
         </motion.div>

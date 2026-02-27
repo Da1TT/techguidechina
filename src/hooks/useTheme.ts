@@ -24,7 +24,7 @@ export function useTheme() {
     if (typeof document !== 'undefined') {
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(theme);
-      
+
       // Only use localStorage in browser environment
       if (typeof localStorage !== 'undefined') {
         localStorage.setItem('theme', theme);
@@ -33,12 +33,12 @@ export function useTheme() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return {
     theme,
     toggleTheme,
-    isDark: theme === 'dark'
+    isDark: theme === 'dark',
   };
 }

@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "首页",
+    "tours": "旅游服务",
+    "exhibitions": "展会服务",
+    "blog": "博客",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "blog": {
+    "title": "展会指南与洞察",
+    "subtitle": "为美国和欧洲参展商在中国展会上取得成功提供实用指南、技巧和行业洞察。",
+    "categories": {
+      "all": "全部",
+      "exhibitionGuide": "展会指南",
+      "exhibitionTips": "展会技巧",
+      "serviceInfo": "服务信息"
+    },
+    "readMore": "阅读更多",
+    "needSupport": "需要专业的展会支持？",
+    "supportDesc": "我们提供专业的翻译、接送、商务陪同等服务，帮助您在中国展会上取得成功。",
+    "contactUs": "联系我们",
+    "noArticles": "该分类下暂无文章",
+    "posts": {
+      "shanghai-exhibition-guide": {
+        "title": "2026上海展会指南：美国和欧洲参展商必备攻略",
+        "description": "全面的上海展会指南，涵盖签证、住宿、交通、商务礼仪等方面，帮助国际参展商取得成功。"
+      },
+      "canton-fair-tips": {
+        "title": "参加广交会的5个实用技巧",
+        "description": "掌握预注册、计划、谈判和后续跟进等技巧，最大化您的展会成果。"
+      },
+      "faq": {
+        "title": "常见问题 - 展会服务",
+        "description": "解答关于签证、服务、价格、住宿、语言和预订等20个常见问题，帮助您快速了解我们的服务。"
+      }
+    }
+  },
+  "footer": {
+    "contact": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "email": "邮箱",
+    "followUs": "关注我们",
+    "copyright": "版权所有。"
+  },
+  "common": {
+    "loading": "加载中...",
+    "learnMore": "了解更多",
+    "contactNow": "立即联系",
+    "viewDetails": "查看详情",
+    "bookNow": "立即预订"
+  }
+}

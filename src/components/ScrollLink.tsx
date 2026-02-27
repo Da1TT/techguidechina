@@ -28,7 +28,7 @@ export default function ScrollLink({ to, children, ...props }: ScrollLinkProps) 
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth' // 平滑滚动
+      behavior: 'smooth', // 平滑滚动
     });
   };
 

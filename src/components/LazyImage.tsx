@@ -1,16 +1,16 @@
-import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   threshold?: number;
   fade?: boolean;
 }
 
-export default function LazyImage({ 
-  threshold = 0.1, 
+export default function LazyImage({
+  threshold = 0.1,
   fade = true,
-  className = "",
-  ...props 
+  className = '',
+  ...props
 }: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);

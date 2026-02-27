@@ -1,7 +1,6 @@
-import ScrollLink from "./ScrollLink";
+import ScrollLink from './ScrollLink';
 
 export default function Footer() {
-
   // Handle newsletter form submission with null safety
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,17 +14,17 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-           {/* Company Info */}
+          {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-             <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
-               <i className="fa-solid fa-globe"></i>
-             </div>
-             <span className="font-bold text-xl">TechGuide in China</span>
-           </div>
+              <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-2">
+                <i className="fa-solid fa-globe"></i>
+              </div>
+              <span className="font-bold text-xl">TechGuide in China</span>
+            </div>
             <p className="text-gray-400 mb-4">
-              Professional ground services for international visitors to Beijing, China.
-              Making your stay comfortable, convenient, and memorable.
+              Professional ground services for international visitors to Beijing, China. Making your
+              stay comfortable, convenient, and memorable.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -43,9 +42,9 @@ export default function Footer() {
             </div>
           </div>
 
-           {/* Contact Info */}
+          {/* Contact Info */}
           <div>
-        <h3 className="text-lg font-bold mb-4">Contact Information</h3>
+            <h3 className="text-lg font-bold mb-4">Contact Information</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <i className="fa-solid fa-phone text-red-500 mt-1 mr-3"></i>
@@ -64,31 +63,43 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-        <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-         <ul className="space-y-2">
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
               <li>
-                 <ScrollLink to="/" className="text-gray-400 hover:text-white transition-colors">
-                 Home
-                 </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink to="/tours" className="text-gray-400 hover:text-white transition-colors">
-                China Tours
+                <ScrollLink to="/" className="text-gray-400 hover:text-white transition-colors">
+                  Home
                 </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="/exhibitions" className="text-gray-400 hover:text-white transition-colors">
-                Exhibitions
+                <ScrollLink
+                  to="/tours"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  China Tours
                 </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="/about" className="text-gray-400 hover:text-white transition-colors">
-                About Us
+                <ScrollLink
+                  to="/exhibitions"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Exhibitions
                 </ScrollLink>
               </li>
               <li>
-                <ScrollLink to="/contact" className="text-gray-400 hover:text-white transition-colors">
-                Contact
+                <ScrollLink
+                  to="/about"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  About Us
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink
+                  to="/contact"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Contact
                 </ScrollLink>
               </li>
             </ul>

@@ -1,17 +1,20 @@
-import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import Home from "./pages/Home";
-import Tours from "./pages/Tours";
-import Exhibitions from "./pages/Exhibitions";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import StructuredData, { organizationSchema, localBusinessSchema } from "./components/StructuredData";
-import { useTheme } from "./hooks/useTheme";
+import Home from './pages/Home';
+import Tours from './pages/Tours';
+import Exhibitions from './pages/Exhibitions';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import StructuredData, {
+  organizationSchema,
+  localBusinessSchema,
+} from './components/StructuredData';
+import { useTheme } from './hooks/useTheme';
 
 export default function App() {
   // 初始化主题
@@ -53,7 +56,7 @@ export default function App() {
         {/* 全局结构化数据 */}
         <StructuredData data={organizationSchema} />
         <StructuredData data={localBusinessSchema} />
-        
+
         <ScrollToTop />
         <Header />
         <main className="flex-grow">

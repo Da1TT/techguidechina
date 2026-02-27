@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "exhibitions": "Exhibitions",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "blog": {
+    "title": "Exhibition Guides & Insights",
+    "subtitle": "Practical guides, tips, and insights for US and European exhibitors to succeed at Chinese exhibitions.",
+    "categories": {
+      "all": "All",
+      "exhibitionGuide": "Exhibition Guide",
+      "exhibitionTips": "Exhibition Tips",
+      "serviceInfo": "Service Info"
+    },
+    "readMore": "Read More",
+    "needSupport": "Need Professional Exhibition Support?",
+    "supportDesc": "We provide professional translation, pickup, business escort, and other services to help you succeed at Chinese exhibitions.",
+    "contactUs": "Contact Us",
+    "noArticles": "No articles in this category",
+    "posts": {
+      "shanghai-exhibition-guide": {
+        "title": "2026 Shanghai Exhibition Guide: Essential Tips for US & European Exhibitors",
+        "description": "Comprehensive guide for Shanghai exhibitions, covering visas, accommodation, transportation, business etiquette, and more to help international exhibitors succeed."
+      },
+      "canton-fair-tips": {
+        "title": "5 Practical Tips for Attending the Canton Fair",
+        "description": "Master the Canton Fair with tips on pre-registration, planning, negotiation, and follow-up to maximize your exhibition results."
+      },
+      "faq": {
+        "title": "FAQ - Exhibition Services",
+        "description": "Answers to 20 common questions about visas, services, pricing, accommodation, language, and bookings to help you quickly understand our services."
+      }
+    }
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "learnMore": "Learn More",
+    "contactNow": "Contact Now",
+    "viewDetails": "View Details",
+    "bookNow": "Book Now"
+  }
+}

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { toast } from "sonner";
-import { motion } from "framer-motion";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useState } from 'react';
+import { toast } from 'sonner';
+import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Types for form data
 interface BookingFormData {
@@ -18,22 +18,22 @@ interface BookingFormData {
 
 interface BookingFormProps {
   onClose: () => void;
-  serviceType: "exhibition" | "tour";
+  serviceType: 'exhibition' | 'tour';
   serviceName: string;
 }
 
 export default function BookingForm({ onClose, serviceType, serviceName }: BookingFormProps) {
-  const { t } = useLanguage();
+  const { t: _t } = useLanguage();
   const [formData, setFormData] = useState<BookingFormData>({
-    name: "",
-    email: "",
-    phone: "",
-    country: "",
-    exhibitionName: "",
-    exhibitionDate: "",
+    name: '',
+    email: '',
+    phone: '',
+    country: '',
+    exhibitionName: '',
+    exhibitionDate: '',
     participantsCount: 1,
-    budget: "",
-    message: "",
+    budget: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Partial<BookingFormData>>({});
@@ -41,24 +41,26 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity:1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.4 }
-    }
+      transition: { duration: 0.4 },
+    },
   };
 
   // Handle input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: name === 'participantsCount' ? parseInt(value) || 1 : value
+      [name]: name === 'participantsCount' ? parseInt(value) || 1 : value,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof BookingFormData]) {
-      setErrors(prev => {
+      setErrors((prev) => {
         const newErrors = { ...prev };
         delete newErrors[name as keyof BookingFormData];
         return newErrors;
@@ -69,33 +71,33 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
   // Validate form
   const validateForm = (): boolean => {
     const newErrors: Partial<BookingFormData> = {};
-    
+
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = 'Name is required';
     }
-    
+
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = 'Please enter a valid email';
     }
-    
+
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = 'Phone number is required';
     }
-    
+
     if (!formData.country.trim()) {
-      newErrors.country = "Country is required";
+      newErrors.country = 'Country is required';
     }
-    
-    if (serviceType === "exhibition" && !formData.exhibitionName.trim()) {
-      newErrors.exhibitionName = "Exhibition name is required";
+
+    if (serviceType === 'exhibition' && !formData.exhibitionName.trim()) {
+      newErrors.exhibitionName = 'Exhibition name is required';
     }
-    
+
     if (formData.participantsCount < 1) {
-      newErrors.participantsCount = "Number of participants must be at least 1";
+      newErrors.participantsCount = 'Number of participants must be at least 1';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -103,10 +105,10 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
   // Handle form submission using Formspree
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
-      
+
       try {
         // 创建FormData对象
         const formDataObj = new FormData();
@@ -121,50 +123,54 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
         formDataObj.append('message', formData.message);
         formDataObj.append('serviceType', serviceType);
         formDataObj.append('serviceName', serviceName);
-        
+
         // 使用Formspree
-        const response = await fetch('https://formspree.io/f/xojdrkdr', { 
+        const response = await fetch('https://formspree.io/f/xojdrkdr', {
           method: 'POST',
           headers: {
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
           body: formDataObj,
         });
-        
+
         console.log('Formspree response status:', response.status);
-        
+
         if (response.ok) {
           // Show success message
-          toast.success(`Thank you ${formData.name}! Your inquiry for ${serviceName} has been received. We will contact you at ${formData.email} within 24 hours.`);
-          
+          toast.success(
+            `Thank you ${formData.name}! Your inquiry for ${serviceName} has been received. We will contact you at ${formData.email} within 24 hours.`
+          );
+
           // Track form submission in Google Analytics
           if (typeof window !== 'undefined' && (window as any).gtag) {
             (window as any).gtag('event', 'form_submission', {
-              'event_category': 'Lead Generation',
-              'event_label': serviceName,
-              'service_type': serviceType,
-              'country': formData.country,
-              'participants_count': formData.participantsCount,
-              'exhibition_name': formData.exhibitionName || 'N/A'
+              event_category: 'Lead Generation',
+              event_label: serviceName,
+              service_type: serviceType,
+              country: formData.country,
+              participants_count: formData.participantsCount,
+              exhibition_name: formData.exhibitionName || 'N/A',
             });
             console.log('Google Analytics event tracked: form_submission');
           }
-          
+
           // Close modal
           onClose();
         } else {
           const errorText = await response.text();
           console.error('Form submission error:', response.status, response.statusText, errorText);
-          
+
           try {
-            const errorData = JSON.parse(errorText);
+            const errorData = JSON.parse(errorText) as { error?: string };
             if (errorData.error) {
               toast.error(`Oops! ${errorData.error}`);
             } else {
               toast.error('Oops! There was a problem submitting your form. Please try again.');
             }
-          } catch (jsonError) {
-            toast.error(`Oops! ${errorText || 'There was a problem submitting your form. Please try again.'}`);
+          } catch {
+            toast.error(
+              `Oops! ${errorText || 'There was a problem submitting your form. Please try again.'}`
+            );
           }
         }
       } catch (error) {
@@ -178,14 +184,14 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
 
   // Get title based on service type
   const getTitle = () => {
-    if (serviceType === "exhibition") {
+    if (serviceType === 'exhibition') {
       return `Get Exhibition Service - ${serviceName}`;
     }
     return `Book ${serviceName}`;
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -195,7 +201,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
         {/* Header */}
         <div className="bg-red-600 text-white p-6 rounded-t-xl flex justify-between items-center">
           <h2 className="text-xl font-bold">{getTitle()}</h2>
-          <button 
+          <button
             onClick={onClose}
             className="text-white hover:text-gray-200 focus:outline-none"
             aria-label="Close"
@@ -203,7 +209,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
             <i className="fa-solid fa-times text-xl"></i>
           </button>
         </div>
-        
+
         {/* Form */}
         <form className="p-6" onSubmit={handleSubmit}>
           {/* Name */}
@@ -222,11 +228,9 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               } focus:outline-none focus:ring-2 focus:ring-red-600`}
               placeholder="Enter your full name"
             />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-            )}
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
           </div>
-          
+
           {/* Email */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
@@ -243,11 +247,9 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               } focus:outline-none focus:ring-2 focus:ring-red-600`}
               placeholder="Enter your email address"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-            )}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
           </div>
-          
+
           {/* Phone */}
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
@@ -264,9 +266,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               } focus:outline-none focus:ring-2 focus:ring-red-600`}
               placeholder="Enter your phone number"
             />
-            {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-            )}
+            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
           </div>
 
           {/* Country */}
@@ -317,13 +317,11 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
                 <option value="Other">Other</option>
               </optgroup>
             </select>
-            {errors.country && (
-              <p className="text-red-500 text-sm mt-1">{errors.country}</p>
-            )}
+            {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country}</p>}
           </div>
 
           {/* Exhibition Name (only for exhibition service) */}
-          {serviceType === "exhibition" && (
+          {serviceType === 'exhibition' && (
             <>
               <div className="mb-4">
                 <label htmlFor="exhibitionName" className="block text-gray-700 font-medium mb-2">
@@ -360,7 +358,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               </div>
             </>
           )}
-          
+
           {/* Number of Participants */}
           <div className="mb-4">
             <label htmlFor="participantsCount" className="block text-gray-700 font-medium mb-2">
@@ -375,7 +373,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
                 errors.participantsCount ? 'border-red-500' : 'border-gray-300'
               } focus:outline-none focus:ring-2 focus:ring-red-600`}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                 <option key={num} value={num}>
                   {num} {num === 1 ? 'Person' : 'People'}
                 </option>
@@ -409,7 +407,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               <option value="Flexible">Flexible - Let me know your quote</option>
             </select>
           </div>
-          
+
           {/* Additional Information */}
           <div className="mb-6">
             <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
@@ -425,7 +423,7 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
               placeholder="Any special requirements? Translation, pickup, specific services needed?"
             ></textarea>
           </div>
-          
+
           {/* Submit Button */}
           <button
             type="submit"
@@ -438,10 +436,10 @@ export default function BookingForm({ onClose, serviceType, serviceName }: Booki
                 Processing...
               </>
             ) : (
-              "Send Inquiry"
+              'Send Inquiry'
             )}
           </button>
-          
+
           {/* Footer Info */}
           <p className="text-xs text-gray-500 mt-4 text-center">
             By submitting this form, you agree to our privacy policy and terms of service.
