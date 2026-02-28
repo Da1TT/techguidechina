@@ -13,4 +13,17 @@ function getPlugins() {
 
 export default defineConfig({
   plugins: getPlugins(),
+  base: "/",
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
+        },
+      },
+    },
+  },
 });

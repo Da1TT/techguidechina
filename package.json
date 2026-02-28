@@ -13,7 +13,8 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
     "install:ci": "npm install --legacy-peer-deps",
     "build:ci": "npm run build",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler pages deploy dist --project-name techguidechina",
+    "pages:deploy": "wrangler pages deploy dist --project-name techguidechina"
   },
   "engines": {
     "node": ">=18"

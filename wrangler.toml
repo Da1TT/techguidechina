@@ -1,12 +1,6 @@
-# Cloudflare Pages Configuration
-# 这个文件配置Cloudflare Pages的构建和部署设置
+name = "techguidechina"
+compatibility_date = "2024-01-01"
 
-# 项目名称
-name = "techguide-in-china"
-
-# 兼容性日期 - Wrangler 4.x 必需
-compatibility_date = "2026-01-21"
-
-# 配置静态资产目录 - 指向构建输出目录
-[assets]
-directory = "./dist"
+# Cloudflare Pages deployment configuration
+[env.production]
+name = "techguidechina"
