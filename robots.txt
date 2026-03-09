@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techguidechina.com/sitemap.xml
+
+# Disallow sensitive areas (if any)
+# Disallow: /admin/
+# Disallow: /private/

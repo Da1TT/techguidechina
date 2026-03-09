@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "name": "index.html",
+      "content": "index.html"
+    },
+    {
+      "name": "sitemap.xml",
+      "content": "sitemap.xml"
+    },
+    {
+      "name": "robots.txt",
+      "content": "robots.txt"
+    },
+    {
+      "name": "package.json",
+      "content": "package.json"
+    },
+    {
+      "name": "README.md",
+      "content": "README.md"
+    }
+  ]
+}

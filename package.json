@@ -1,0 +1,16 @@
+{
+  "name": "techguide-china",
+  "version": "1.0.0",
+  "description": "TechGuide China - Expert SaaS Software Reviews & Guides",
+  "scripts": {
+    "dev": "echo 'No build step needed for static HTML'",
+    "build": "echo 'No build step needed for static HTML'"
+  },
+  "keywords": [
+    "saas",
+    "software-reviews",
+    "tech-guide"
+  ],
+  "author": "TechGuide China",
+  "license": "MIT"
+}
